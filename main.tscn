@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://i43rvnm2waf3"]
+
+[ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dmikytr3guud5" path="res://boca.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cr6mvvf5344gb" path="res://scripts/main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://ctlfupjpxdvu" path="res://espirites/mesa.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bumorvq50mttq" path="res://espirites/dealer.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cuy5f0k4e68sh" path="res://espirites/objeto.png" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://cs2ovra0ro4l1" path="res://arrastrar.gd" id="6_272bh"]
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
+_data = {
+&"RESET": SubResource("Animation_7mycd"),
+&"appear": SubResource("Animation_272bh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(200, 200)
+
+[node name="main" type="Node2D" unique_id=2143314829]
+script = ExtResource("1_lquwl")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1532755359]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(527, 415.5)
+scale = Vector2(9.234375, 7.4921875)
+texture = ExtResource("1_0xm2m")
+
+[node name="boca" parent="." unique_id=289500279 instance=ExtResource("1_ig7tw")]
+position = Vector2(512, 384)
+
+[node name="dealer" type="Sprite2D" parent="." unique_id=988331869]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(512, 384)
+texture = ExtResource("4_lquwl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dealer" unique_id=104711846]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="mesa" type="Sprite2D" parent="." unique_id=895254106]
+position = Vector2(512, 384)
+texture = ExtResource("3_h2yge")
+
+[node name="spriteObjeto" type="Sprite2D" parent="." unique_id=1912154483]
+position = Vector2(512, 384)
+texture = ExtResource("5_7mycd")
+script = ExtResource("6_272bh")
+
+[node name="Area2D" type="Area2D" parent="spriteObjeto" unique_id=862192891]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spriteObjeto/Area2D" unique_id=2031956084]
+position = Vector2(0, 120)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[connection signal="animation_finished" from="dealer/AnimationPlayer" to="." method="_on_dealer_animation_finished"]
+[connection signal="input_event" from="spriteObjeto/Area2D" to="spriteObjeto" method="_on_area_2d_input_event"]

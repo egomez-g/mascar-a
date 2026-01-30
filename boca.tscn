@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dmikytr3guud5"]
+
+[ext_resource type="Texture2D" uid="uid://2dse1s358i" path="res://espirites/boca.png" id="1_xm0cj"]
+
+[node name="boca" type="Node2D" unique_id=289500279]
+
+[node name="spriteBoca" type="Sprite2D" parent="." unique_id=1534896538]
+texture = ExtResource("1_xm0cj")
