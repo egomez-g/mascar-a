@@ -10,6 +10,7 @@ enum Estados {
 }
 
 @export var sonidoPasarTexto: AudioStreamPlayer2D
+@export var background: AudioStreamPlayer2D
 
 var text_i: int = 0
 var personajes_i: int = 0
@@ -70,7 +71,6 @@ func avanzar_juego():
 	elif estado == Estados.HABLANDOPOST:
 		if mascado:
 			if text_i < get_current_personaje_data().textoPostMascar.size():
-				sonidoPasarTexto.play()
 				zonaTexto.text = get_current_personaje_data().textoPostMascar[text_i]
 				text_i += 1
 				sonidoPasarTexto.play()
