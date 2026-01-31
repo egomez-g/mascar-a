@@ -14,6 +14,7 @@ var padreBasura
 var fuerzaDelsake: int = 6
 signal OnTrash
 signal OnMouth
+signal OnStartGrab
 
 @export var boca: Node2D
 @export var basura: Node2D
@@ -29,6 +30,7 @@ func _ready():
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click_izq"):
+		OnStartGrab.emit()
 		selected = true
 		ini_pos = global_position
 		isSakeable = false

@@ -22,7 +22,6 @@ var estado: int
 
 var mascado : bool
 var currentGrab : objeto_sprite
-var currentPersonajeSprite : Sprite2D
 
 @export var personajes : Array[Personaje]
 @export var nodosPersonaje : Array[Node2D]
@@ -43,7 +42,7 @@ func _input(event: InputEvent) -> void:
 
 func avanzar_juego():
 	if estado == Estados.INICIO:
-		currentPersonajeSprite = get_current_personaje_node().get_node("AnimationPlayer") as Sprite2D
+		UpdateCurrentPersonaje()
 		get_current_personaje_node().get_node("AnimationPlayer").play("appear")
 		get_current_personaje_node().get_node("./spriteObjeto/AnimationPlayer").play("appear")
 		currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
@@ -55,6 +54,7 @@ func avanzar_juego():
 		else:
 			get_current_personaje_node().get_node("spriteObjeto").isSakeable = true
 			zonaTexto.text = ""
+			currentGrab.OnStartGrab.connect(OnStartGrab)
 			shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			currentGrab.OnMouth.connect(OnObjetoArrastradoBoca)
 			currentGrab.OnTrash.connect(OnObjetoArrastradoTrash)
@@ -78,6 +78,11 @@ func avanzar_juego():
 				text_i += 1
 			else:
 				GoNextPersonaje()
+
+func OnStartGrab():
+	currentGrab.OnStartGrab.disconnect(OnStartGrab)
+	if get_current_personaje_data().onObjetoCogidoTexture != null:
+		(get_current_personaje_node() as Sprite2D).texture = get_current_personaje_data().onObjetoCogidoTexture
 
 func OnMascarEnded():
 	mascarMiniGame.StepsEnded.disconnect(OnMascarEnded)
@@ -111,8 +116,9 @@ func GoNextPersonaje():
 		zonaTexto.text = ""
 		personajes_i += 1
 		text_i = 0
-		currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
-		currentPersonajeSprite = get_current_personaje_node().get_node("AnimationPlayer") as Sprite2D
-		shader.mouse_filter = Control.MOUSE_FILTER_STOP
+		UpdateCurrentPersonaje()
+		shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		estado = Estados.SIGUIENTE_PJ
-	
+
+func  UpdateCurrentPersonaje():
+	currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
