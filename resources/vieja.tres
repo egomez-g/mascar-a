@@ -2,26 +2,37 @@
 
 [ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="1_0o53s"]
 [ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_0t6fk"]
+[ext_resource type="AudioStream" uid="uid://dviym5uqj03ba" path="res://musica/pastilla viejo 1.mp3" id="2_h66f6"]
 [ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="2_u6o5b"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="3_mcdnk"]
 [ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="4_a65g2"]
 [ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="5_h66f6"]
+[ext_resource type="AudioStream" uid="uid://xmhm4k0epwwg" path="res://musica/pastilla viejo 2.mp3" id="5_s5rce"]
+[ext_resource type="AudioStream" uid="uid://dhqv4uprojc5o" path="res://musica/pastilla viejo 3.mp3" id="7_gqhbw"]
+[ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="8_baqnp"]
 
 [sub_resource type="Resource" id="Resource_s5rce"]
 script = ExtResource("1_0t6fk")
 sprite1 = ExtResource("2_u6o5b")
 sprite2 = ExtResource("3_mcdnk")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+sonido = ExtResource("2_h66f6")
 
 [sub_resource type="Resource" id="Resource_gqhbw"]
 script = ExtResource("1_0t6fk")
 sprite1 = ExtResource("4_a65g2")
 sprite2 = ExtResource("3_mcdnk")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+sonido = ExtResource("5_s5rce")
+
+[sub_resource type="Resource" id="Resource_uhx0g"]
+script = ExtResource("1_0t6fk")
+sprite1 = ExtResource("2_u6o5b")
+sprite2 = ExtResource("8_baqnp")
+sonido = ExtResource("7_gqhbw")
+metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
 
 [sub_resource type="Resource" id="Resource_baqnp"]
 script = ExtResource("5_h66f6")
-_pasos = Array[ExtResource("1_0t6fk")]([SubResource("Resource_s5rce"), SubResource("Resource_gqhbw")])
+_pasos = Array[ExtResource("1_0t6fk")]([SubResource("Resource_s5rce"), SubResource("Resource_gqhbw"), SubResource("Resource_uhx0g")])
 
 [resource]
 script = ExtResource("1_0o53s")

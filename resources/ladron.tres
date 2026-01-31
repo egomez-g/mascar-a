@@ -15,25 +15,21 @@
 script = ExtResource("1_pk161")
 sprite1 = ExtResource("2_v515b")
 sprite2 = ExtResource("3_mgf51")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 
 [sub_resource type="Resource" id="Resource_b4ihl"]
 script = ExtResource("1_pk161")
 sprite1 = ExtResource("4_u17xr")
 sprite2 = ExtResource("3_mgf51")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 
 [sub_resource type="Resource" id="Resource_3s824"]
 script = ExtResource("1_pk161")
 sprite1 = ExtResource("5_wjaur")
 sprite2 = ExtResource("6_txxq7")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 
 [sub_resource type="Resource" id="Resource_4ahsx"]
 script = ExtResource("1_pk161")
 sprite1 = ExtResource("2_v515b")
 sprite2 = ExtResource("7_tjp6i")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 
 [sub_resource type="Resource" id="Resource_v1qok"]
 script = ExtResource("8_5t5fx")

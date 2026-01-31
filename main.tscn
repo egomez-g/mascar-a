@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://d3qlvti417eeh" path="res://espirites/bocaAbierta.png" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://duob2tlfcfoap" path="res://espirites/marcoBoca.png" id="9_getpj"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="11_1u8w0"]
-[ext_resource type="Script" uid="uid://dt1oao6eay2cq" path="res://ladron.gd" id="15_d13ii"]
+[ext_resource type="Script" uid="uid://dshgc53h7csst" path="res://ladron.gd" id="15_d13ii"]
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Script" uid="uid://c4tkx5v5u6xyc" path="res://cursor.gd" id="19_82xsv"]
@@ -140,7 +140,7 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(527, 415.5)
 scale = Vector2(9.234375, 7.4921875)
 stream = ExtResource("7_1u8w0")
-volume_db = -40.23
+volume_db = -42.269
 autoplay = true
 
 [node name="basura" type="Sprite2D" parent="." unique_id=996691720]
