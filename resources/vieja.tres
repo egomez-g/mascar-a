@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://8m6iina3b5mo"]
 
-[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="1_0o53s"]
-[ext_resource type="Script" uid="uid://dbqo1dihbwww2" path="res://scripts/Pasos/PasoMascar.gd" id="1_0t6fk"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="1_0o53s"]
+[ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_0t6fk"]
 [ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="2_u6o5b"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="3_mcdnk"]
 [ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="4_a65g2"]
-[ext_resource type="Script" uid="uid://c7afjj4lv2pqf" path="res://scripts/Pasos/Pasos.gd" id="5_h66f6"]
+[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="5_h66f6"]
 
 [sub_resource type="Resource" id="Resource_s5rce"]
 script = ExtResource("1_0t6fk")
@@ -22,10 +22,10 @@ metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 [sub_resource type="Resource" id="Resource_baqnp"]
 script = ExtResource("5_h66f6")
 _pasos = Array[ExtResource("1_0t6fk")]([SubResource("Resource_s5rce"), SubResource("Resource_gqhbw")])
-metadata/_custom_type_script = "uid://c7afjj4lv2pqf"
 
 [resource]
 script = ExtResource("1_0o53s")
-textoIntro = Array[String](["Dialogo intro: P-p-perdona joven… Ne-necesito tu ayuda", "he escuchado q-q-que partes cosas", "y la enfermera me sigue d-d-dando las pastillas de siempre.", "¿Podrías ayudarme? t-tengo dinero."])
+textoIntro = Array[String](["P-p-perdona joven… Ne-necesito tu ayuda, he escuchado q-q-que partes cosas", "La enfermera me sigue d-d-dando las pastillas de siempre", "¿Podrías ayudarme? t-tengo dineroo las pastillas de siempre."])
+textoPostMascar = Array[String](["Gracias joven", "No sabes el favor que me has hecho", "No quiero tener que t-tratar con la enfermera"])
+textoPostThrash = Array[String](["V-vale perdona, no q-quería molestarte", "Ya me aviso e-el de la limpieza que no viniera"])
 mascarData = SubResource("Resource_baqnp")
-metadata/_custom_type_script = "uid://dffytth1pn8o1"

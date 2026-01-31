@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://bajkc5hskksiq"]
+
+[ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_darsj"]
+[ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="2_hurad"]
+[ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="3_y6p2b"]
+[ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="4_mhtm4"]
+[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="5_b3piy"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="6_q7qa7"]
+
+[sub_resource type="Resource" id="Resource_s5rce"]
+script = ExtResource("1_darsj")
+sprite1 = ExtResource("2_hurad")
+sprite2 = ExtResource("3_y6p2b")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_gqhbw"]
+script = ExtResource("1_darsj")
+sprite1 = ExtResource("4_mhtm4")
+sprite2 = ExtResource("3_y6p2b")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_baqnp"]
+script = ExtResource("5_b3piy")
+_pasos = Array[ExtResource("1_darsj")]([SubResource("Resource_s5rce"), SubResource("Resource_gqhbw")])
+
+[resource]
+script = ExtResource("6_q7qa7")
+textoIntro = Array[String](["Tío, te veo muy tenso ¿Ha pasado algo? ¿Quieres un cigarro?ecesito tu ayuda"])
+textoPostMascar = Array[String](["¿¿Te acabas… de comer… el cigarro??"])
+textoPostThrash = Array[String](["Eh… ¿Qué haces? Si no lo querías solo tenias que decírmelo subnormal"])
+mascarData = SubResource("Resource_baqnp")
