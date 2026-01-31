@@ -4,10 +4,12 @@ class_name objeto_sprite
 var selected:bool = false
 var ini_pos:Vector2
 var true_pos:Vector2
-var polla = 0
 var pos_raton = Vector2(0, 0)
-@onready var boca = get_node("../../boca/pos_boca")
-@onready var basura = get_node("../../basura/pos_basura")
+signal OnTrash
+signal OnMouth
+
+@export var boca: Node2D
+@export var basura: Node2D
 
 
 func _ready():
@@ -33,8 +35,10 @@ func check_if_boca():
 	var dist_boca = get_global_mouse_position() - boca.global_position
 	var dist_basura = get_global_mouse_position() - basura.global_position
 	if dist_boca.x < 200 and dist_boca.y < 200:
+		OnMouth.emit()
 		print("boca")
 	elif dist_basura.x < 200 and dist_basura.y < 200:
 		print ("basura")
+		OnTrash.emit()
 	else:
 		global_position = ini_pos
