@@ -4,7 +4,9 @@ extends Sprite2D
 
 func  _ready() -> void:
 	pistolaAgarrar.OnStartGrab.connect(EnableVisibility)
-	pistolaAgarrar.visible = false;
+	pistolaAgarrar.modulate.a = 0.0
+	print("QUELOQUE")
 	
 func EnableVisibility() -> void:
-	pistolaAgarrar.visible = true;
+	pistolaAgarrar.modulate.a = 1.0
+	print("pero")

@@ -96,33 +96,9 @@ size = Vector2(177.64648, 168.6817)
 
 [sub_resource type="Animation" id="Animation_5vw27"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_kek77"]
 resource_name = "appear"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4c57u"]
 _data = {
@@ -197,7 +173,6 @@ texture = ExtResource("4_5vw27")
 libraries/ = SubResource("AnimationLibrary_5vw27")
 
 [node name="spriteObjeto" type="Sprite2D" parent="vieja" unique_id=1182436786 node_paths=PackedStringArray("boca", "basura")]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(155, 165)
 texture = SubResource("AtlasTexture_efxa6")
 script = ExtResource("6_272bh")
@@ -222,7 +197,6 @@ script = ExtResource("15_d13ii")
 pistolaAgarrar = NodePath("spriteObjeto")
 
 [node name="spriteObjeto" type="Sprite2D" parent="ladron" unique_id=1912154483 node_paths=PackedStringArray("boca", "basura")]
-modulate = Color(1, 1, 1, 0)
 show_behind_parent = true
 position = Vector2(30, 57)
 rotation = 3.1028526
@@ -254,7 +228,6 @@ texture = ExtResource("15_ryguw")
 libraries/ = SubResource("AnimationLibrary_5vw27")
 
 [node name="spriteObjeto" type="Sprite2D" parent="amego" unique_id=156318856 node_paths=PackedStringArray("boca", "basura")]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(28, 2)
 texture = SubResource("AtlasTexture_1u8w0")
 script = ExtResource("6_272bh")
@@ -304,7 +277,6 @@ vertical_alignment = 1
 script = ExtResource("19_82xsv")
 
 [node name="shader2" type="Control" parent="." unique_id=125821447]
-visible = false
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0
