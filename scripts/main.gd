@@ -11,11 +11,14 @@ enum Estados {
 # var enableInput: bool = false
 var text_i: int = 0
 var personajes_i: int = 0
+
 var estado: int
 
 @onready var ladron = get_node("./ladron")
 @onready var vieja = get_node("./vieja")
-
+@export var mascarMiniGame : MascarMinGame
+@export var mascarDataVieja : Pasos
+@export var mascarDataLadron : Pasos
 
 @onready var shader = $shader2
 @onready var zonaTexto = $zonaTexto
@@ -36,6 +39,7 @@ var textoLadron := [
 
 var personajes := []
 var textos := []
+var pasos_personajes := []
 
 func _ready():
 	personajes = [
@@ -46,6 +50,12 @@ func _ready():
 		textoVieja,
 		textoLadron
 	]
+	
+	pasos_personajes = [
+		mascarDataVieja,
+		mascarDataLadron
+	]
+	
 	estado = Estados.INICIO
 	zonaTexto.text = "DALE A LA PUTA A"
 
@@ -66,14 +76,22 @@ func avanzar_juego():
 			if personajes_i == 0:
 				zonaTexto.text = "Arrastra el objeto"
 			shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			mascarMiniGame.Initialize(pasos_personajes[personajes_i])
 			estado = Estados.MASCAR
+			mascarMiniGame.StepsEnded.connect(OnMascarEnded)
 	elif estado == Estados.SIGUIENTE_PJ:
 		if personajes_i < personajes.size():
 			personajes[personajes_i].get_node("AnimationPlayer").play("appear")
 			personajes[personajes_i].get_node("./spriteObjeto/AnimationPlayer").play("appear")
 			estado = Estados.HABLANDO
 	elif estado == Estados.MASCAR:
-		personajes[personajes_i].get_node("AnimationPlayer").play("disappear")
-		estado = Estados.SIGUIENTE_PJ
-		personajes_i += 1
-		text_i = 0
+		mascarMiniGame.next()
+
+func OnMascarEnded():
+	estado = Estados.SIGUIENTE_PJ
+	personajes[personajes_i].get_node("AnimationPlayer").play("disappear")
+	mascarMiniGame.StepsEnded.disconnect(OnMascarEnded)
+	personajes_i += 1
+	text_i = 0
+	
+	

@@ -1,4 +1,4 @@
 extends Resource
 class_name Pasos
 
-@export var ahah: Array[PasoMascar]
+@export var _pasos: Array[PasoMascar]

@@ -1,6 +1,7 @@
 extends Sprite2D
+class_name  MascarMinGame
 
-@export var Pepepe: Pasos
+@export var _pasos: Pasos
 @onready var audio_player = $AudioStreamPlayer2D
 var currentIndex: int = 0
 var canGoNext: bool = true
@@ -12,18 +13,18 @@ func _ready() -> void:
 func _printStepsEnd() -> void:
 	print("Steps ENded")	
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click_izq"):
-		next()
+#func _process(delta: float) -> void:
+	#if Input.is_action_just_pressed("click_izq"):
+	#	next()
 
 func Initialize(pasos: Pasos) -> void:
-	Pepepe = pasos
+	_pasos = pasos
 	currentIndex = 0
 	canGoNext = true
 
 func next() -> void:
 	if	canGoNext:
-		if currentIndex != Pepepe.ahah.size():
+		if currentIndex != _pasos._pasos.size():
 			await  PlayAnimation()
 			currentIndex += 1
 		else:
@@ -32,9 +33,9 @@ func next() -> void:
 
 func PlayAnimation() -> void:
 	canGoNext = false
-	audio_player.stream = Pepepe.ahah[currentIndex].sonido
+	audio_player.stream = _pasos._pasos[currentIndex].sonido
 	audio_player.play()
-	texture = Pepepe.ahah[currentIndex].sprite1
+	texture = _pasos._pasos[currentIndex].sprite1
 	await  get_tree().create_timer(0.5).timeout
-	texture = Pepepe.ahah[currentIndex].sprite2
+	texture = _pasos._pasos[currentIndex].sprite2
 	canGoNext = true
