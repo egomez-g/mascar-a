@@ -30,8 +30,7 @@ size = Vector2(126.13696, 128.84448)
 [node name="Node2D" type="Node2D" unique_id=1533479581]
 
 [node name="Lengua" type="RigidBody2D" parent="." unique_id=1488988348]
-position = Vector2(554, 325)
-rotation = -0.23394027
+position = Vector2(508, 347)
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_ub8qx")
 gravity_scale = 0.2

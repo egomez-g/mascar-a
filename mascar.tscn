@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c2qt0hkhqerbg"]
+
+[ext_resource type="Texture2D" uid="uid://bumorvq50mttq" path="res://espirites/dealer.png" id="1_ijm6q"]
+[ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="2_p01h8"]
+[ext_resource type="Script" uid="uid://dbqo1dihbwww2" path="res://scripts/Pasos/PasoMascar.gd" id="3_p01h8"]
+[ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="4_6hkcy"]
+[ext_resource type="Script" uid="uid://c7afjj4lv2pqf" path="res://scripts/Pasos/Pasos.gd" id="4_ohdro"]
+[ext_resource type="Texture2D" uid="uid://2dse1s358i" path="res://espirites/boca.png" id="5_kv6tw"]
+[ext_resource type="Texture2D" uid="uid://ctlfupjpxdvu" path="res://espirites/mesa.png" id="6_3pge7"]
+[ext_resource type="Texture2D" uid="uid://cuy5f0k4e68sh" path="res://espirites/objeto.png" id="7_iw614"]
+
+[sub_resource type="Resource" id="Resource_ohdro"]
+script = ExtResource("3_p01h8")
+sprite1 = ExtResource("4_6hkcy")
+sprite2 = ExtResource("5_kv6tw")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_isaaf"]
+script = ExtResource("3_p01h8")
+sprite1 = ExtResource("6_3pge7")
+sprite2 = ExtResource("7_iw614")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_6xs28"]
+script = ExtResource("4_ohdro")
+ahah = Array[ExtResource("3_p01h8")]([SubResource("Resource_ohdro"), SubResource("Resource_isaaf")])
+metadata/_custom_type_script = "uid://c7afjj4lv2pqf"
+
+[node name="Node2D" type="Node2D" unique_id=1319444771]
+
+[node name="Mascar" type="Sprite2D" parent="." unique_id=2100838274]
+position = Vector2(518, 384)
+texture = ExtResource("1_ijm6q")
+script = ExtResource("2_p01h8")
+Pepepe = SubResource("Resource_6xs28")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mascar" unique_id=872022681]
