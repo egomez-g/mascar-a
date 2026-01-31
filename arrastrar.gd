@@ -1,6 +1,7 @@
 extends Sprite2D
 class_name objeto_sprite
 
+var glow_tween: Tween
 var selected:bool = false
 var ini_pos:Vector2
 var true_pos:Vector2
@@ -9,6 +10,7 @@ var pos_raton = Vector2(0, 0)
 @onready var boca = get_node("../../boca/pos_boca")
 @onready var basura = get_node("../../basura/pos_basura")
 
+@export var isSakeable: bool
 
 func _ready():
 	ini_pos = global_position
@@ -38,3 +40,37 @@ func check_if_boca():
 		print ("basura")
 	else:
 		global_position = ini_pos
+
+func _process(delta: float):
+	if isSakeable:
+		sakear()
+	else:
+		desSakear()
+
+func sakear():
+	brillo()
+
+func desSakear():
+	desbrillo()
+
+func brillo():
+	glow_tween = create_tween()
+	glow_tween.set_loops()
+	glow_tween.tween_property(
+		$Sprite2D,
+		"modulate",
+		Color(1.3, 1.3, 1.3),
+		0.15
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+	glow_tween.tween_property(
+		$Sprite2D,
+		"modulate",
+		Color(1.0, 1.0, 1.0),
+		0.15
+	)
+
+func desbrillo():
+	if glow_tween:
+		glow_tween.kill()
+	$Sprite2D.modulate = Color(1, 1, 1)
