@@ -117,7 +117,7 @@ func GoNextPersonaje():
 		personajes_i += 1
 		text_i = 0
 		UpdateCurrentPersonaje()
-		shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		shader.mouse_filter = Control.MOUSE_FILTER_STOP
 		estado = Estados.SIGUIENTE_PJ
 
 func  UpdateCurrentPersonaje():
