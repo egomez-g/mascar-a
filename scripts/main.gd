@@ -53,6 +53,7 @@ func avanzar_juego():
 			zonaTexto.text = get_current_personaje_data().textoIntro[text_i]
 			text_i += 1
 		else:
+			get_current_personaje_node().get_node("spriteObjeto").isSakeable = true
 			zonaTexto.text = ""
 			shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			currentGrab.OnMouth.connect(OnObjetoArrastradoBoca)
@@ -112,6 +113,6 @@ func GoNextPersonaje():
 		text_i = 0
 		currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
 		currentPersonajeSprite = get_current_personaje_node().get_node("AnimationPlayer") as Sprite2D
-		shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		shader.mouse_filter = Control.MOUSE_FILTER_STOP
 		estado = Estados.SIGUIENTE_PJ
 	

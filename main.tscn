@@ -173,7 +173,6 @@ texture = SubResource("AtlasTexture_efxa6")
 script = ExtResource("6_272bh")
 boca = NodePath("../../Mascar/pos_boca")
 basura = NodePath("../../basura/pos_basura")
-isSakeable = true
 
 [node name="Area2D" type="Area2D" parent="vieja/spriteObjeto" unique_id=617886615]
 position = Vector2(-1, 4)
@@ -192,12 +191,14 @@ texture = ExtResource("5_4c57u")
 
 [node name="spriteObjeto" type="Sprite2D" parent="ladron" unique_id=1912154483 node_paths=PackedStringArray("boca", "basura")]
 modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
 position = Vector2(30, 57)
+rotation = 3.1028526
 texture = SubResource("AtlasTexture_82xsv")
+flip_h = true
 script = ExtResource("6_272bh")
 boca = NodePath("../../Mascar/pos_boca")
 basura = NodePath("../../basura/pos_basura")
-isSakeable = true
 
 [node name="Area2D" type="Area2D" parent="ladron/spriteObjeto" unique_id=862192891]
 position = Vector2(-1, -82)
@@ -227,7 +228,6 @@ texture = SubResource("AtlasTexture_1u8w0")
 script = ExtResource("6_272bh")
 boca = NodePath("../../Mascar/pos_boca")
 basura = NodePath("../../basura/pos_basura")
-isSakeable = true
 
 [node name="Area2D" type="Area2D" parent="amego/spriteObjeto" unique_id=260623216]
 position = Vector2(-1, 4)
