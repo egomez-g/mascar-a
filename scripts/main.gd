@@ -23,6 +23,8 @@ var estado: int
 @onready var shader = $shader2
 @onready var zonaTexto = $zonaTexto
 
+var currentGrab : objeto_sprite
+
 var textoVieja := [
 	"Dialogo intro: P-p-perdona joven… Ne-necesito tu ayuda",
 	"he escuchado q-q-que partes cosas",
@@ -67,6 +69,7 @@ func avanzar_juego():
 	if estado == Estados.INICIO:
 		personajes[personajes_i].get_node("AnimationPlayer").play("appear")
 		personajes[personajes_i].get_node("./spriteObjeto/AnimationPlayer").play("appear")
+		currentGrab = personajes[personajes_i].find_child("spriteObjeto") as objeto_sprite
 		estado = Estados.HABLANDO
 	elif estado == Estados.HABLANDO:
 		if text_i < textos[personajes_i].size():
@@ -76,9 +79,9 @@ func avanzar_juego():
 			if personajes_i == 0:
 				zonaTexto.text = "Arrastra el objeto"
 			shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			mascarMiniGame.Initialize(pasos_personajes[personajes_i])
-			estado = Estados.MASCAR
-			mascarMiniGame.StepsEnded.connect(OnMascarEnded)
+			currentGrab.OnMouth.connect(OnObjetoArrastradoBoca)
+			currentGrab.OnTrash.connect(OnObjetoArrastradoTrash)
+			
 	elif estado == Estados.SIGUIENTE_PJ:
 		print(personajes.size())
 		print(personajes_i)
@@ -90,10 +93,28 @@ func avanzar_juego():
 		mascarMiniGame.next()
 
 func OnMascarEnded():
-	estado = Estados.SIGUIENTE_PJ
 	personajes[personajes_i].get_node("AnimationPlayer").play("disappear")
 	mascarMiniGame.StepsEnded.disconnect(OnMascarEnded)
+	GoNextPersonaje()
+	
+func  OnObjetoArrastradoTrash():
+	currentGrab.OnTrash.disconnect(OnObjetoArrastradoTrash)
+	currentGrab.OnMouth.disconnect(OnObjetoArrastradoBoca)
+	GoNextPersonaje()
+
+func  OnObjetoArrastradoBoca():
+	currentGrab.OnTrash.disconnect(OnObjetoArrastradoTrash)
+	currentGrab.OnMouth.disconnect(OnObjetoArrastradoBoca)
+	GoEstadoMascar()
+
+func GoEstadoMascar():
+	mascarMiniGame.Initialize(pasos_personajes[personajes_i])
+	estado = Estados.MASCAR
+	mascarMiniGame.StepsEnded.connect(OnMascarEnded)
+
+func GoNextPersonaje():
+	estado = Estados.SIGUIENTE_PJ
 	personajes_i += 1
 	text_i = 0
-	
+	currentGrab = personajes[personajes_i].find_child("spriteObjeto") as objeto_sprite
 	
