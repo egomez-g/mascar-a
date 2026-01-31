@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://i43rvnm2waf3"]
 
 [ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cr6mvvf5344gb" path="res://scripts/main.gd" id="1_lquwl"]
-[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="2_vivmo"]
+[ext_resource type="Script" uid="uid://u7vufwwh1mm6" path="res://scripts/main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="2_vivmo"]
 [ext_resource type="Resource" uid="uid://8m6iina3b5mo" path="res://resources/vieja.tres" id="3_vivmo"]
 [ext_resource type="Resource" uid="uid://j2y3g51ytud1" path="res://resources/ladron.tres" id="4_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://tn4vp8uhqgj0" path="res://espirites/vieja.png" id="4_5vw27"]
@@ -10,11 +10,11 @@
 [ext_resource type="Resource" uid="uid://bajkc5hskksiq" path="res://resources/amego.tres" id="5_cegan"]
 [ext_resource type="Texture2D" uid="uid://byrn50wmqhswv" path="res://espirites/pasti.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
-[ext_resource type="Script" uid="uid://cs2ovra0ro4l1" path="res://arrastrar.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://dtbf150sawjgw" path="res://arrastrar.gd" id="6_272bh"]
 [ext_resource type="AudioStream" uid="uid://bwb8v5ksy25rb" path="res://musica/pinga.mp3" id="6_d13ii"]
 [ext_resource type="AudioStream" uid="uid://cw7eo4s32wn0d" path="res://musica/musica fondo dark chill.mp3" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="7_82xsv"]
-[ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
+[ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
 [ext_resource type="Texture2D" uid="uid://d3qlvti417eeh" path="res://espirites/bocaAbierta.png" id="9_82xsv"]
@@ -23,8 +23,8 @@
 [ext_resource type="Script" uid="uid://dt1oao6eay2cq" path="res://ladron.gd" id="15_d13ii"]
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
-[ext_resource type="Script" uid="uid://c4tkx5v5u6xyc" path="res://cursor.gd" id="19_82xsv"]
-[ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
+[ext_resource type="Script" uid="uid://cyaqnrwly5qsb" path="res://cursor.gd" id="19_82xsv"]
+[ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 
 [sub_resource type="GDScript" id="GDScript_cegan"]
 script/source = "extends Area2D
@@ -125,9 +125,10 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
-[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("sonidoPasarTexto", "mascarMiniGame", "nodosPersonaje")]
+[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("sonidoPasarTexto", "background", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 sonidoPasarTexto = NodePath("pasarTexto")
+background = NodePath("background")
 mascarMiniGame = NodePath("Mascar")
 personajes = Array[ExtResource("2_vivmo")]([ExtResource("3_vivmo"), ExtResource("4_2cqfq"), ExtResource("5_cegan")])
 nodosPersonaje = [NodePath("vieja"), NodePath("ladron"), NodePath("amego")]
@@ -281,7 +282,6 @@ vertical_alignment = 1
 script = ExtResource("19_82xsv")
 
 [node name="shader2" type="Control" parent="." unique_id=125821447]
-visible = false
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0
