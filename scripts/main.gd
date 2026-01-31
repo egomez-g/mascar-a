@@ -24,6 +24,12 @@ var currentGrab : objeto_sprite
 @export var personajes : Array[Personaje]
 @export var nodosPersonaje : Array[Node2D]
 
+func  get_current_personaje_data() -> Personaje:
+	return personajes[personajes_i]
+
+func  get_current_personaje_node() -> Node2D:
+	return nodosPersonaje[personajes_i]
+
 func _ready():
 	estado = Estados.INICIO
 	zonaTexto.text = "DALE A LA PUTA A"
@@ -34,17 +40,15 @@ func _input(event: InputEvent) -> void:
 
 func avanzar_juego():
 	if estado == Estados.INICIO:
-		nodosPersonaje[personajes_i].get_node("AnimationPlayer").play("appear")
-		nodosPersonaje[personajes_i].get_node("./spriteObjeto/AnimationPlayer").play("appear")
-		currentGrab = nodosPersonaje[personajes_i].find_child("spriteObjeto") as objeto_sprite
+		get_current_personaje_node().get_node("AnimationPlayer").play("appear")
+		get_current_personaje_node().get_node("./spriteObjeto/AnimationPlayer").play("appear")
+		currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
 		estado = Estados.HABLANDO
 	elif estado == Estados.HABLANDO:
-		if text_i < personajes[personajes_i].textoIntro.size():
-			zonaTexto.text = personajes[personajes_i].textoIntro[text_i]
+		if text_i < get_current_personaje_data().textoIntro.size():
+			zonaTexto.text = get_current_personaje_data().textoIntro[text_i]
 			text_i += 1
 		else:
-			if personajes_i == 0:
-				zonaTexto.text = "Arrastra el objeto"
 			shader.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			currentGrab.OnMouth.connect(OnObjetoArrastradoBoca)
 			currentGrab.OnTrash.connect(OnObjetoArrastradoTrash)
@@ -53,8 +57,8 @@ func avanzar_juego():
 		print(personajes.size())
 		print(personajes_i)
 		if personajes_i < personajes.size():
-			nodosPersonaje[personajes_i].get_node("AnimationPlayer").play("appear")
-			nodosPersonaje[personajes_i].get_node("./spriteObjeto/AnimationPlayer").play("appear")
+			get_current_personaje_node().get_node("AnimationPlayer").play("appear")
+			get_current_personaje_node().get_node("./spriteObjeto/AnimationPlayer").play("appear")
 			estado = Estados.HABLANDO
 	elif estado == Estados.MASCAR:
 		mascarMiniGame.next()
@@ -76,15 +80,15 @@ func  OnObjetoArrastradoBoca():
 	GoEstadoMascar()
 
 func GoEstadoMascar():
-	mascarMiniGame.Initialize(personajes[personajes_i].mascarData)
+	mascarMiniGame.Initialize(get_current_personaje_data().mascarData)
 	estado = Estados.MASCAR
 	mascarMiniGame.StepsEnded.connect(OnMascarEnded)
 
 func GoNextPersonaje():
-	nodosPersonaje[personajes_i].get_node("AnimationPlayer").play("disappear")
+	get_current_personaje_node().get_node("AnimationPlayer").play("disappear")
 	if personajes_i < personajes.size():
 		personajes_i += 1
 		text_i = 0
-		currentGrab = nodosPersonaje[personajes_i].find_child("spriteObjeto") as objeto_sprite
+		currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
 		estado = Estados.SIGUIENTE_PJ
 	
