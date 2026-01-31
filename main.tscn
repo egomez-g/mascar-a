@@ -139,6 +139,15 @@ position = Vector2(527, 415.5)
 scale = Vector2(9.234375, 7.4921875)
 texture = ExtResource("1_0xm2m")
 
+[node name="basura" type="Sprite2D" parent="." unique_id=996691720]
+position = Vector2(512, 384)
+texture = ExtResource("8_kek77")
+
+[node name="pos_basura" type="Sprite2D" parent="basura" unique_id=805815868]
+visible = false
+position = Vector2(-315, 200)
+texture = ExtResource("1_0xm2m")
+
 [node name="Mascar" type="Sprite2D" parent="." unique_id=1299971976 node_paths=PackedStringArray("_mascarArea")]
 position = Vector2(518, 384)
 texture = ExtResource("7_82xsv")
@@ -197,7 +206,6 @@ script = ExtResource("15_d13ii")
 pistolaAgarrar = NodePath("spriteObjeto")
 
 [node name="spriteObjeto" type="Sprite2D" parent="ladron" unique_id=1912154483 node_paths=PackedStringArray("boca", "basura")]
-show_behind_parent = true
 position = Vector2(30, 57)
 rotation = 3.1028526
 texture = SubResource("AtlasTexture_82xsv")
@@ -250,15 +258,6 @@ libraries/ = SubResource("AnimationLibrary_4c57u")
 position = Vector2(512, 384)
 texture = ExtResource("5_kek77")
 
-[node name="basura" type="Sprite2D" parent="." unique_id=996691720]
-position = Vector2(512, 384)
-texture = ExtResource("8_kek77")
-
-[node name="pos_basura" type="Sprite2D" parent="basura" unique_id=805815868]
-visible = false
-position = Vector2(-315, 200)
-texture = ExtResource("1_0xm2m")
-
 [node name="zonaTexto" type="RichTextLabel" parent="." unique_id=1642762759]
 offset_left = 90.0
 offset_top = 568.0
@@ -277,6 +276,7 @@ vertical_alignment = 1
 script = ExtResource("19_82xsv")
 
 [node name="shader2" type="Control" parent="." unique_id=125821447]
+visible = false
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0

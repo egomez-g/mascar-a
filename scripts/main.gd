@@ -35,7 +35,7 @@ func  get_current_personaje_node() -> Node2D:
 
 func _ready():
 	estado = Estados.INICIO
-	zonaTexto.text = "DALE A LA PUTA A"
+	zonaTexto.text = "PULSA 'A'"
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tecla_a"):
