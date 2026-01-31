@@ -9,7 +9,8 @@ enum Estados {
 	HABLANDOPOST,
 }
 
-# var enableInput: bool = false
+@export var sonidoPasarTexto: AudioStreamPlayer2D
+
 var text_i: int = 0
 var personajes_i: int = 0
 
@@ -51,6 +52,7 @@ func avanzar_juego():
 		if text_i < get_current_personaje_data().textoIntro.size():
 			zonaTexto.text = get_current_personaje_data().textoIntro[text_i]
 			text_i += 1
+			sonidoPasarTexto.play()
 		else:
 			get_current_personaje_node().get_node("spriteObjeto").isSakeable = true
 			zonaTexto.text = ""
@@ -68,14 +70,17 @@ func avanzar_juego():
 	elif estado == Estados.HABLANDOPOST:
 		if mascado:
 			if text_i < get_current_personaje_data().textoPostMascar.size():
+				sonidoPasarTexto.play()
 				zonaTexto.text = get_current_personaje_data().textoPostMascar[text_i]
 				text_i += 1
+				sonidoPasarTexto.play()
 			else:
 				GoNextPersonaje()
 		else:
 			if text_i < get_current_personaje_data().textoPostThrash.size():
 				zonaTexto.text = get_current_personaje_data().textoPostThrash[text_i]
 				text_i += 1
+				sonidoPasarTexto.play()
 			else:
 				GoNextPersonaje()
 
