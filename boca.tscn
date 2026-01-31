@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://dmikytr3guud5"]
 
 [ext_resource type="Texture2D" uid="uid://2dse1s358i" path="res://espirites/boca.png" id="1_xm0cj"]
+[ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="2_kxoqj"]
 
 [node name="boca" type="Node2D" unique_id=289500279]
 
 [node name="spriteBoca" type="Sprite2D" parent="." unique_id=1534896538]
 texture = ExtResource("1_xm0cj")
+
+[node name="pos_boca" type="Sprite2D" parent="." unique_id=243551139]
+visible = false
+position = Vector2(-258, -180)
+texture = ExtResource("2_kxoqj")

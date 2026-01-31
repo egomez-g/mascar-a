@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dmikytr3guud5" path="res://boca.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cr6mvvf5344gb" path="res://scripts/main.gd" id="1_lquwl"]
-[ext_resource type="Texture2D" uid="uid://ctlfupjpxdvu" path="res://espirites/mesa.png" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://bumorvq50mttq" path="res://espirites/dealer.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://tn4vp8uhqgj0" path="res://espirites/vieja.png" id="4_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cuy5f0k4e68sh" path="res://espirites/objeto.png" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
 [ext_resource type="Script" uid="uid://cs2ovra0ro4l1" path="res://arrastrar.gd" id="6_272bh"]
 [ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
 
 [sub_resource type="Animation" id="Animation_7mycd"]
 length = 0.001
@@ -48,6 +49,42 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
 size = Vector2(306, 276)
 
+[sub_resource type="Animation" id="Animation_5vw27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kek77"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4c57u"]
+_data = {
+&"RESET": SubResource("Animation_5vw27"),
+&"appear": SubResource("Animation_kek77")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
 shader = ExtResource("8_5vw27")
 shader_parameter/wiggle = 0.03
@@ -70,16 +107,17 @@ position = Vector2(512, 384)
 [node name="dealer" type="Sprite2D" parent="." unique_id=988331869]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(512, 384)
-texture = ExtResource("4_lquwl")
+texture = ExtResource("4_5vw27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="dealer" unique_id=104711846]
 libraries/ = SubResource("AnimationLibrary_5vw27")
 
 [node name="mesa" type="Sprite2D" parent="." unique_id=895254106]
 position = Vector2(512, 384)
-texture = ExtResource("3_h2yge")
+texture = ExtResource("5_kek77")
 
 [node name="spriteObjeto" type="Sprite2D" parent="." unique_id=1912154483]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(512, 384)
 texture = ExtResource("5_7mycd")
 script = ExtResource("6_272bh")
@@ -90,15 +128,40 @@ script = ExtResource("6_272bh")
 position = Vector2(-15, 97)
 shape = SubResource("RectangleShape2D_5vw27")
 
-[node name="shader" type="Control" parent="." unique_id=1616113870]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spriteObjeto" unique_id=2126432628]
+libraries/ = SubResource("AnimationLibrary_4c57u")
+
+[node name="basura" type="Sprite2D" parent="." unique_id=996691720]
+position = Vector2(512, 384)
+texture = ExtResource("8_kek77")
+
+[node name="pos_basura" type="Sprite2D" parent="basura" unique_id=805815868]
+visible = false
+position = Vector2(-315, 200)
+texture = ExtResource("1_0xm2m")
+
+[node name="zonaTexto" type="RichTextLabel" parent="." unique_id=1642762759]
+offset_left = 90.0
+offset_top = 568.0
+offset_right = 922.12
+offset_bottom = 770.78503
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/normal_font_size = 30
+text = "KHAFDSAGHDFAGJHDFASJHDFAS"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shader2" type="Control" parent="." unique_id=125821447]
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1024.0
 offset_bottom = 768.0
-mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="shader" unique_id=835931637]
+[node name="ColorRect" type="ColorRect" parent="shader2" unique_id=1151871324]
 material = SubResource("ShaderMaterial_kek77")
 layout_mode = 1
 anchors_preset = 15
