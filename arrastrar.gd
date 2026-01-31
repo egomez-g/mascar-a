@@ -38,18 +38,16 @@ func check_if_boca():
 	var dist_basura = get_global_mouse_position() - basura.global_position
 	if dist_boca.x < 200 and dist_boca.y < 200:
 		OnMouth.emit()
-		print("boca")
 	elif dist_basura.x < 200 and dist_basura.y < 200:
-		print ("basura")
 		OnTrash.emit()
 	else:
 		global_position = ini_pos
 
-func _process(delta: float):
-	if isSakeable:
-		sakear()
-	else:
-		desSakear()
+#func _process(delta: float):
+	#if isSakeable:
+		#sakear()
+	#else:
+		#desSakear()
 
 func sakear():
 	brillo()
