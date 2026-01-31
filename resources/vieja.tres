@@ -27,5 +27,7 @@ metadata/_custom_type_script = "uid://c7afjj4lv2pqf"
 [resource]
 script = ExtResource("1_0o53s")
 textoIntro = Array[String](["Dialogo intro: P-p-perdona joven… Ne-necesito tu ayuda", "he escuchado q-q-que partes cosas", "y la enfermera me sigue d-d-dando las pastillas de siempre.", "¿Podrías ayudarme? t-tengo dinero."])
+textoPostMascar = Array[String](["bien mascado", "mamahuevo"])
+textoPostThrash = Array[String](["que haces", "cojones"])
 mascarData = SubResource("Resource_baqnp")
 metadata/_custom_type_script = "uid://dffytth1pn8o1"

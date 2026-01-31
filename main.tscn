@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://byrn50wmqhswv" path="res://espirites/pasti.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
 [ext_resource type="Script" uid="uid://dtbf150sawjgw" path="res://arrastrar.gd" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="6_vivmo"]
 [ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
-[ext_resource type="Texture2D" uid="uid://2dse1s358i" path="res://espirites/boca.png" id="11_82xsv"]
 [ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 
 [sub_resource type="Animation" id="Animation_7mycd"]
@@ -136,7 +136,7 @@ texture = ExtResource("1_0xm2m")
 
 [node name="Mascar" type="Sprite2D" parent="." unique_id=1299971976]
 position = Vector2(518, 384)
-texture = ExtResource("11_82xsv")
+texture = ExtResource("6_vivmo")
 script = ExtResource("20_82xsv")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mascar" unique_id=1743252191]
