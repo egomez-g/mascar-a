@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://byrn50wmqhswv" path="res://espirites/pasti.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
 [ext_resource type="Script" uid="uid://dtbf150sawjgw" path="res://arrastrar.gd" id="6_272bh"]
+[ext_resource type="AudioStream" uid="uid://bwb8v5ksy25rb" path="res://musica/pinga.mp3" id="6_d13ii"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="7_82xsv"]
 [ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
@@ -146,11 +147,15 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
-[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("mascarMiniGame", "nodosPersonaje")]
+[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("sonidoPasarTexto", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
+sonidoPasarTexto = NodePath("AudioStreamPlayer2D")
 mascarMiniGame = NodePath("Mascar")
 personajes = Array[ExtResource("2_vivmo")]([ExtResource("3_vivmo"), ExtResource("4_2cqfq"), ExtResource("5_cegan")])
 nodosPersonaje = [NodePath("vieja"), NodePath("ladron"), NodePath("amego")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=685464370]
+stream = ExtResource("6_d13ii")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1532755359]
 modulate = Color(0, 0, 0, 1)
