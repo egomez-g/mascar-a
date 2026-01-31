@@ -37,6 +37,8 @@ func  get_current_personaje_node() -> Node2D:
 func _ready():
 	estado = Estados.INICIO
 	zonaTexto.text = "PULSA 'A'"
+	for nodoPersonaje in nodosPersonaje:
+		(nodoPersonaje.find_child("CollisionShape2D") as CollisionShape2D).disabled = true
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tecla_a"):
@@ -126,4 +128,5 @@ func GoNextPersonaje():
 		estado = Estados.SIGUIENTE_PJ
 
 func  UpdateCurrentPersonaje():
+	(get_current_personaje_node().find_child("CollisionShape2D") as CollisionShape2D).disabled = false
 	currentGrab = get_current_personaje_node().find_child("spriteObjeto") as objeto_sprite
