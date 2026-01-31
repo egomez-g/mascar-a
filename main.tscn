@@ -15,10 +15,22 @@
 [ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://d3qlvti417eeh" path="res://espirites/bocaAbierta.png" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://duob2tlfcfoap" path="res://espirites/marcoBoca.png" id="9_getpj"]
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
+
+[sub_resource type="GDScript" id="GDScript_cegan"]
+script/source = "extends Area2D
+
+
+func _ready() -> void:
+	body_entered
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_getpj"]
+size = Vector2(12.626457, 13.368676)
 
 [sub_resource type="Animation" id="Animation_7mycd"]
 length = 0.001
@@ -144,10 +156,12 @@ position = Vector2(527, 415.5)
 scale = Vector2(9.234375, 7.4921875)
 texture = ExtResource("1_0xm2m")
 
-[node name="Mascar" type="Sprite2D" parent="." unique_id=1299971976]
+[node name="Mascar" type="Sprite2D" parent="." unique_id=1299971976 node_paths=PackedStringArray("_mascarArea")]
 position = Vector2(518, 384)
 texture = ExtResource("7_82xsv")
 script = ExtResource("20_82xsv")
+_mascarArea = NodePath("Area2D")
+_bocaAbierta = ExtResource("9_82xsv")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mascar" unique_id=1743252191]
 
@@ -157,6 +171,15 @@ position = Vector2(-249, -178)
 [node name="marco" type="Sprite2D" parent="Mascar" unique_id=1603540480]
 show_behind_parent = true
 texture = ExtResource("9_getpj")
+
+[node name="Area2D" type="Area2D" parent="Mascar" unique_id=1507336211]
+position = Vector2(-254, -181)
+scale = Vector2(-21.066875, 15.109947)
+script = SubResource("GDScript_cegan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mascar/Area2D" unique_id=172974781]
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_getpj")
 
 [node name="vieja" type="Sprite2D" parent="." unique_id=1923758419]
 modulate = Color(1, 1, 1, 0)
@@ -269,6 +292,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="shader2" type="Control" parent="." unique_id=125821447]
+visible = false
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0
