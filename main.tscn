@@ -201,13 +201,11 @@ shape = SubResource("RectangleShape2D_5vw27")
 libraries/ = SubResource("AnimationLibrary_4c57u")
 
 [node name="ladron" type="Sprite2D" parent="." unique_id=988331869]
-visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(512, 384)
 texture = ExtResource("5_4c57u")
 
 [node name="spriteObjeto" type="Sprite2D" parent="ladron" unique_id=1912154483]
-visible = false
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("8_dg77c")
 script = ExtResource("6_272bh")

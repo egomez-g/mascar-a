@@ -5,7 +5,7 @@ class_name  MascarMinGame
 @onready var audio_player = $AudioStreamPlayer2D
 var currentIndex: int = 0
 var canGoNext: bool = true
-var StepsEnded: Signal
+signal StepsEnded
 
 func _ready() -> void:
 	StepsEnded.connect(_printStepsEnd)

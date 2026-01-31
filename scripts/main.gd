@@ -80,6 +80,8 @@ func avanzar_juego():
 			estado = Estados.MASCAR
 			mascarMiniGame.StepsEnded.connect(OnMascarEnded)
 	elif estado == Estados.SIGUIENTE_PJ:
+		print(personajes.size())
+		print(personajes_i)
 		if personajes_i < personajes.size():
 			personajes[personajes_i].get_node("AnimationPlayer").play("appear")
 			personajes[personajes_i].get_node("./spriteObjeto/AnimationPlayer").play("appear")
