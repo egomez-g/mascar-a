@@ -7,9 +7,9 @@ class_name  MascarMinGame
 var currentIndex: int = 0
 var canGoNext: bool = true
 signal StepsEnded
+@export var bocaNeutra: Texture
 
 @export var _bocaAbierta: Texture
-@export var prevTexture: Texture
 
 func _ready() -> void:
 	StepsEnded.connect(_printStepsEnd)
@@ -24,12 +24,10 @@ func _printStepsEnd() -> void:
 	#	next()
 
 func OnAreaEntered(area: Area2D):
-	prevTexture = texture
 	texture = _bocaAbierta
 
 func OnAreaExit(area: Area2D):
-	print("AHHH")
-	texture = prevTexture
+	texture = bocaNeutra
 
 func Initialize(pasos: Pasos) -> void:
 	_pasos = pasos
