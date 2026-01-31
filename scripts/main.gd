@@ -85,6 +85,6 @@ func GoNextPersonaje():
 	if personajes_i < personajes.size():
 		personajes_i += 1
 		text_i = 0
-		currentGrab = personajes[personajes_i].find_child("spriteObjeto") as objeto_sprite
+		currentGrab = nodosPersonaje[personajes_i].find_child("spriteObjeto") as objeto_sprite
 		estado = Estados.SIGUIENTE_PJ
 	
