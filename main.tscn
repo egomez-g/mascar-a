@@ -1,59 +1,44 @@
 [gd_scene format=3 uid="uid://i43rvnm2waf3"]
 
 [ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cr6mvvf5344gb" path="res://scripts/main.gd" id="1_lquwl"]
-[ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="2_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="3_cegan"]
-[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="3_w48qg"]
+[ext_resource type="Script" uid="uid://u7vufwwh1mm6" path="res://scripts/main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="2_vivmo"]
+[ext_resource type="Script" uid="uid://dbqo1dihbwww2" path="res://scripts/Pasos/PasoMascar.gd" id="2_ycdy4"]
+[ext_resource type="Script" uid="uid://c7afjj4lv2pqf" path="res://scripts/Pasos/Pasos.gd" id="3_w48qg"]
 [ext_resource type="Texture2D" uid="uid://tn4vp8uhqgj0" path="res://espirites/vieja.png" id="4_5vw27"]
-[ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="4_82xsv"]
 [ext_resource type="Texture2D" uid="uid://bn4wc8811wx0q" path="res://espirites/ladronAmenaza.png" id="5_4c57u"]
 [ext_resource type="Texture2D" uid="uid://byrn50wmqhswv" path="res://espirites/pasti.png" id="5_efxa6"]
-[ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="5_getpj"]
 [ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
-[ext_resource type="Script" uid="uid://cs2ovra0ro4l1" path="res://arrastrar.gd" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="7_ryguw"]
-[ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
-[ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="8_d13ii"]
+[ext_resource type="Script" uid="uid://dtbf150sawjgw" path="res://arrastrar.gd" id="6_272bh"]
+[ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
-[ext_resource type="Texture2D" uid="uid://un8wrtkvh3ba" path="res://espirites/bocaIzquierda.png" id="9_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://2dse1s358i" path="res://espirites/boca.png" id="11_82xsv"]
-[ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
-
-[sub_resource type="Resource" id="Resource_vivmo"]
-script = ExtResource("2_ycdy4")
-sprite1 = ExtResource("3_cegan")
-sprite2 = ExtResource("4_82xsv")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+[ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 
 [sub_resource type="Resource" id="Resource_2cqfq"]
 script = ExtResource("2_ycdy4")
-sprite1 = ExtResource("5_getpj")
-sprite2 = ExtResource("4_82xsv")
 metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 
 [sub_resource type="Resource" id="Resource_yaehf"]
-script = ExtResource("3_w48qg")
-_pasos = Array[ExtResource("2_ycdy4")]([SubResource("Resource_vivmo"), SubResource("Resource_2cqfq")])
-metadata/_custom_type_script = "uid://c7afjj4lv2pqf"
-
-[sub_resource type="Resource" id="Resource_0odxb"]
 script = ExtResource("2_ycdy4")
-sprite1 = ExtResource("7_ryguw")
-sprite2 = ExtResource("8_d13ii")
 metadata/_custom_type_script = "uid://dbqo1dihbwww2"
 
-[sub_resource type="Resource" id="Resource_lswn8"]
-script = ExtResource("2_ycdy4")
-sprite1 = ExtResource("9_1u8w0")
-sprite2 = ExtResource("8_d13ii")
-metadata/_custom_type_script = "uid://dbqo1dihbwww2"
-
-[sub_resource type="Resource" id="Resource_a6jrf"]
+[sub_resource type="Resource" id="Resource_074og"]
 script = ExtResource("3_w48qg")
-_pasos = Array[ExtResource("2_ycdy4")]([SubResource("Resource_0odxb"), SubResource("Resource_lswn8")])
+_pasos = Array[ExtResource("2_ycdy4")]([SubResource("Resource_2cqfq"), SubResource("Resource_yaehf")])
 metadata/_custom_type_script = "uid://c7afjj4lv2pqf"
+
+[sub_resource type="Resource" id="Resource_cegan"]
+script = ExtResource("2_vivmo")
+textoIntro = Array[String](["Dialogo intro: P-p-perdona joven… Ne-necesito tu ayuda", "he escuchado q-q-que partes cosas", "y la enfermera me sigue d-d-dando las pastillas de siempre.", "¿Podrías ayudarme? t-tengo dinero."])
+mascarData = SubResource("Resource_074og")
+metadata/_custom_type_script = "uid://dffytth1pn8o1"
+
+[sub_resource type="Resource" id="Resource_82xsv"]
+script = ExtResource("2_vivmo")
+textoIntro = Array[String](["DAME TODO LO QUE TENGAS JODEEER, ME ESTOY PONIENDO MUY NERVIOSO", "E-Eh vale vale, tranquilo colega… N-no hagas ninguna tontería", "¡¡¿¿ PERO QUE COJONES HACES ??!! ESTAS TOCADO DE LA CABEZA COLEGA, VAYA PUTA CIUDAD DE COLGADOS, ME PIRO DE AQUÍ", "¿Pero…? Mira, déjalo…"])
+metadata/_custom_type_script = "uid://dffytth1pn8o1"
 
 [sub_resource type="Animation" id="Animation_7mycd"]
 length = 0.001
@@ -112,7 +97,7 @@ atlas = ExtResource("5_efxa6")
 region = Rect2(641, 495, 71, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(263.29297, 249.3634)
+size = Vector2(177.64648, 168.6817)
 
 [sub_resource type="Animation" id="Animation_5vw27"]
 length = 0.001
@@ -150,6 +135,10 @@ _data = {
 &"appear": SubResource("Animation_kek77")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
+atlas = ExtResource("8_dg77c")
+region = Rect2(424, 511, 126, 172)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
 shader = ExtResource("8_5vw27")
 shader_parameter/wiggle = 0.03
@@ -157,11 +146,11 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
-[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("mascarMiniGame")]
+[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 mascarMiniGame = NodePath("Mascar")
-mascarDataVieja = SubResource("Resource_yaehf")
-mascarDataLadron = SubResource("Resource_a6jrf")
+personajes = Array[ExtResource("2_vivmo")]([SubResource("Resource_cegan"), SubResource("Resource_82xsv")])
+nodosPersonaje = [NodePath("vieja"), NodePath("ladron")]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1532755359]
 modulate = Color(0, 0, 0, 1)
@@ -176,6 +165,9 @@ script = ExtResource("20_82xsv")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mascar" unique_id=1743252191]
 
+[node name="pos_boca" type="Node2D" parent="Mascar" unique_id=1776903419]
+position = Vector2(-249, -178)
+
 [node name="vieja" type="Sprite2D" parent="." unique_id=1923758419]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(512, 384)
@@ -189,8 +181,8 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(155, 165)
 texture = SubResource("AtlasTexture_efxa6")
 script = ExtResource("6_272bh")
-boca = NodePath("../../Mascar")
-basura = NodePath("../../basura")
+boca = NodePath("../../Mascar/pos_boca")
+basura = NodePath("../../basura/pos_basura")
 isSakeable = true
 
 [node name="Area2D" type="Area2D" parent="vieja/spriteObjeto" unique_id=617886615]
@@ -210,16 +202,18 @@ texture = ExtResource("5_4c57u")
 
 [node name="spriteObjeto" type="Sprite2D" parent="ladron" unique_id=1912154483 node_paths=PackedStringArray("boca", "basura")]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("8_dg77c")
+position = Vector2(30, 57)
+texture = SubResource("AtlasTexture_82xsv")
 script = ExtResource("6_272bh")
-boca = NodePath("../../Mascar")
-basura = NodePath("../../basura")
+boca = NodePath("../../Mascar/pos_boca")
+basura = NodePath("../../basura/pos_basura")
 isSakeable = true
 
 [node name="Area2D" type="Area2D" parent="ladron/spriteObjeto" unique_id=862192891]
+position = Vector2(-1, -82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladron/spriteObjeto/Area2D" unique_id=2031956084]
-position = Vector2(-15, 97)
+position = Vector2(8.176758, 81.34085)
 shape = SubResource("RectangleShape2D_5vw27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ladron/spriteObjeto" unique_id=2126432628]
