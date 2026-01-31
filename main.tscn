@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dmikytr3guud5" path="res://boca.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cr6mvvf5344gb" path="res://scripts/main.gd" id="1_lquwl"]
 [ext_resource type="Texture2D" uid="uid://tn4vp8uhqgj0" path="res://espirites/vieja.png" id="4_5vw27"]
-[ext_resource type="Texture2D" uid="uid://cuy5f0k4e68sh" path="res://espirites/objeto.png" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bn4wc8811wx0q" path="res://espirites/ladronAmenaza.png" id="5_4c57u"]
+[ext_resource type="Texture2D" uid="uid://byrn50wmqhswv" path="res://espirites/pasti.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
 [ext_resource type="Script" uid="uid://cs2ovra0ro4l1" path="res://arrastrar.gd" id="6_272bh"]
 [ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
 
 [sub_resource type="Animation" id="Animation_7mycd"]
@@ -40,14 +42,34 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_4c57u"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
 _data = {
 &"RESET": SubResource("Animation_7mycd"),
-&"appear": SubResource("Animation_272bh")
+&"appear": SubResource("Animation_272bh"),
+&"disappear": SubResource("Animation_4c57u")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("5_efxa6")
+region = Rect2(641, 495, 71, 77)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(306, 276)
+size = Vector2(263.29297, 249.3634)
 
 [sub_resource type="Animation" id="Animation_5vw27"]
 length = 0.001
@@ -104,32 +126,57 @@ texture = ExtResource("1_0xm2m")
 [node name="boca" parent="." unique_id=289500279 instance=ExtResource("1_ig7tw")]
 position = Vector2(512, 384)
 
-[node name="dealer" type="Sprite2D" parent="." unique_id=988331869]
+[node name="vieja" type="Sprite2D" parent="." unique_id=1923758419]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(512, 384)
 texture = ExtResource("4_5vw27")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dealer" unique_id=104711846]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="vieja" unique_id=1185882731]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="spriteObjeto" type="Sprite2D" parent="vieja" unique_id=1182436786]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(155, 165)
+texture = SubResource("AtlasTexture_efxa6")
+script = ExtResource("6_272bh")
+
+[node name="Area2D" type="Area2D" parent="vieja/spriteObjeto" unique_id=617886615]
+position = Vector2(-1, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vieja/spriteObjeto/Area2D" unique_id=635749844]
+scale = Vector2(0.49867204, 0.44000125)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="vieja/spriteObjeto" unique_id=1431689170]
+libraries/ = SubResource("AnimationLibrary_4c57u")
+
+[node name="ladron" type="Sprite2D" parent="." unique_id=988331869]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(512, 384)
+texture = ExtResource("5_4c57u")
+
+[node name="spriteObjeto" type="Sprite2D" parent="ladron" unique_id=1912154483]
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("8_dg77c")
+script = ExtResource("6_272bh")
+
+[node name="Area2D" type="Area2D" parent="ladron/spriteObjeto" unique_id=862192891]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladron/spriteObjeto/Area2D" unique_id=2031956084]
+position = Vector2(-15, 97)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ladron/spriteObjeto" unique_id=2126432628]
+libraries/ = SubResource("AnimationLibrary_4c57u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ladron" unique_id=104711846]
 libraries/ = SubResource("AnimationLibrary_5vw27")
 
 [node name="mesa" type="Sprite2D" parent="." unique_id=895254106]
 position = Vector2(512, 384)
 texture = ExtResource("5_kek77")
-
-[node name="spriteObjeto" type="Sprite2D" parent="." unique_id=1912154483]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(512, 384)
-texture = ExtResource("5_7mycd")
-script = ExtResource("6_272bh")
-
-[node name="Area2D" type="Area2D" parent="spriteObjeto" unique_id=862192891]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spriteObjeto/Area2D" unique_id=2031956084]
-position = Vector2(-15, 97)
-shape = SubResource("RectangleShape2D_5vw27")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="spriteObjeto" unique_id=2126432628]
-libraries/ = SubResource("AnimationLibrary_4c57u")
 
 [node name="basura" type="Sprite2D" parent="." unique_id=996691720]
 position = Vector2(512, 384)
@@ -155,6 +202,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="shader2" type="Control" parent="." unique_id=125821447]
+visible = false
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0
@@ -171,5 +219,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[connection signal="animation_finished" from="dealer/AnimationPlayer" to="." method="_on_dealer_animation_finished"]
-[connection signal="input_event" from="spriteObjeto/Area2D" to="spriteObjeto" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="vieja/spriteObjeto/Area2D" to="vieja/spriteObjeto" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="ladron/spriteObjeto/Area2D" to="ladron/spriteObjeto" method="_on_area_2d_input_event"]
+[connection signal="animation_finished" from="ladron/AnimationPlayer" to="." method="_on_dealer_animation_finished"]

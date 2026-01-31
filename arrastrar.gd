@@ -6,8 +6,8 @@ var ini_pos:Vector2
 var true_pos:Vector2
 var polla = 0
 var pos_raton = Vector2(0, 0)
-@onready var boca = get_node("../boca/pos_boca")
-@onready var basura = get_node("../basura/pos_basura")
+@onready var boca = get_node("../../boca/pos_boca")
+@onready var basura = get_node("../../basura/pos_basura")
 
 
 func _ready():
