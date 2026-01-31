@@ -24,7 +24,7 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1024
 window/size/viewport_height=768
 window/stretch/mode="viewport"
-mouse_cursor/custom_image="uid://bqu56elpjwbfm"
+mouse_cursor/custom_image="uid://djdmwuyen6tqk"
 
 [input]
 
