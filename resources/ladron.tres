@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://j2y3g51ytud1"]
+
+[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="1_0r5nj"]
+[ext_resource type="Script" uid="uid://dbqo1dihbwww2" path="res://scripts/Pasos/PasoMascar.gd" id="1_pk161"]
+[ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="2_v515b"]
+[ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="3_mgf51"]
+[ext_resource type="Texture2D" uid="uid://un8wrtkvh3ba" path="res://espirites/bocaIzquierda.png" id="4_u17xr"]
+[ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="5_wjaur"]
+[ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="6_txxq7"]
+[ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="7_tjp6i"]
+[ext_resource type="Script" uid="uid://c7afjj4lv2pqf" path="res://scripts/Pasos/Pasos.gd" id="8_5t5fx"]
+
+[sub_resource type="Resource" id="Resource_d5va3"]
+script = ExtResource("1_pk161")
+sprite1 = ExtResource("2_v515b")
+sprite2 = ExtResource("3_mgf51")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_b4ihl"]
+script = ExtResource("1_pk161")
+sprite1 = ExtResource("4_u17xr")
+sprite2 = ExtResource("3_mgf51")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_3s824"]
+script = ExtResource("1_pk161")
+sprite1 = ExtResource("5_wjaur")
+sprite2 = ExtResource("6_txxq7")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_4ahsx"]
+script = ExtResource("1_pk161")
+sprite1 = ExtResource("2_v515b")
+sprite2 = ExtResource("7_tjp6i")
+metadata/_custom_type_script = "uid://dbqo1dihbwww2"
+
+[sub_resource type="Resource" id="Resource_v1qok"]
+script = ExtResource("8_5t5fx")
+_pasos = Array[ExtResource("1_pk161")]([SubResource("Resource_d5va3"), SubResource("Resource_b4ihl"), SubResource("Resource_3s824"), SubResource("Resource_4ahsx")])
+metadata/_custom_type_script = "uid://c7afjj4lv2pqf"
+
+[resource]
+script = ExtResource("1_0r5nj")
+textoIntro = Array[String](["Dialogo intro: P-p-perdona joven… Ne-necesito tu ayuda", "he escuchado q-q-que partes cosas", "", ""])
+textoPostMascar = Array[String](["", ""])
+mascarData = SubResource("Resource_v1qok")
+metadata/_custom_type_script = "uid://dffytth1pn8o1"

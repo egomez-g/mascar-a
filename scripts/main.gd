@@ -14,32 +14,12 @@ var personajes_i: int = 0
 
 var estado: int
 
-@onready var ladron = get_node("./ladron")
-@onready var vieja = get_node("./vieja")
 @export var mascarMiniGame : MascarMinGame
 
 @onready var shader = $shader2
 @onready var zonaTexto = $zonaTexto
 
 var currentGrab : objeto_sprite
-
-var Vieja
-var Ladron
-
-var textoVieja := [
-	"Dialogo intro: P-p-perdona joven… Ne-necesito tu ayuda",
-	"he escuchado q-q-que partes cosas",
-	"y la enfermera me sigue d-d-dando las pastillas de siempre.",
-	"¿Podrías ayudarme? t-tengo dinero."
-]
-
-var textoLadron := [
-	"DAME TODO LO QUE TENGAS JODEEER, ME ESTOY PONIENDO MUY NERVIOSO",
-	"E-Eh vale vale, tranquilo colega… N-no hagas ninguna tontería",
-	"¡¡¿¿ PERO QUE COJONES HACES ??!! ESTAS TOCADO DE LA CABEZA COLEGA, VAYA PUTA CIUDAD DE COLGADOS, ME PIRO DE AQUÍ",
-	"¿Pero…? Mira, déjalo…"
-]
-
 
 @export var personajes : Array[Personaje]
 @export var nodosPersonaje : Array[Node2D]
