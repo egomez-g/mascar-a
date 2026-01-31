@@ -3,4 +3,3 @@ class_name objeto
 
 func _ready():
 	pass
-

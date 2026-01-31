@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://bnuoo42uursg7"]
+
+[ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="1_8aprp"]
+[ext_resource type="Script" uid="uid://bumqkk4urqgcc" path="res://lengua.gd" id="1_ub8qx"]
+[ext_resource type="Texture2D" uid="uid://cuy5f0k4e68sh" path="res://espirites/objeto.png" id="2_ub8qx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ub8qx"]
+friction = 0.0
+rough = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjrhi"]
+radius = 62.5
+height = 128.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rjrhi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0055w"]
+radius = 84.095184
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnaus"]
+atlas = ExtResource("2_ub8qx")
+region = Rect2(341, 389, 295, 238)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mnaus"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub8qx"]
+size = Vector2(126.13696, 128.84448)
+
+[node name="Node2D" type="Node2D" unique_id=1533479581]
+
+[node name="Lengua" type="RigidBody2D" parent="." unique_id=1488988348]
+position = Vector2(554, 325)
+rotation = -0.23394027
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_ub8qx")
+gravity_scale = 0.2
+lock_rotation = true
+script = ExtResource("1_ub8qx")
+maxForce = 10000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Lengua" unique_id=1569770350]
+scale = Vector2(1.42, 0.20499757)
+texture = ExtResource("1_8aprp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lengua" unique_id=582420449]
+rotation = 1.5707964
+scale = Vector2(0.20499757, 1.42)
+shape = SubResource("CapsuleShape2D_rjrhi")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Lengua/CollisionShape2D" unique_id=148124711]
+rotation = -1.5707964
+node_a = NodePath("../..")
+node_b = NodePath("../../../Joint")
+length = 10.0
+damping = 4.0
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=1302694678]
+position = Vector2(519, 271)
+physics_material_override = SubResource("PhysicsMaterial_rjrhi")
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=1159962676]
+scale = Vector2(0.34, 0.34)
+shape = SubResource("CircleShape2D_0055w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D2/CollisionShape2D" unique_id=766498010]
+texture = SubResource("AtlasTexture_mnaus")
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1175025095]
+position = Vector2(506, 533)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=1663202755]
+rotation = 1.5707964
+scale = Vector2(0.565, 8.34)
+shape = SubResource("CapsuleShape2D_rjrhi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo/CollisionShape2D" unique_id=937113439]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Boca3" type="StaticBody2D" parent="." unique_id=1093919302]
+position = Vector2(316, 377)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boca3" unique_id=1025877355]
+position = Vector2(0, -22)
+rotation = 1.5707964
+scale = Vector2(0.66594315, -0.23283914)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boca3/CollisionShape2D" unique_id=827214524]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Boca6" type="StaticBody2D" parent="." unique_id=310221223]
+position = Vector2(501, 380)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boca6" unique_id=1466923714]
+rotation = 1.5707964
+scale = Vector2(0.26594308, 2.8071609)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boca6/CollisionShape2D" unique_id=1337526433]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Joint" type="StaticBody2D" parent="." unique_id=1836671854]
+position = Vector2(509, 381)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Joint" unique_id=964267347]
+rotation = 1.5707964
+scale = Vector2(0.26594308, 2.8071609)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Joint/CollisionShape2D" unique_id=2098744625]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Boca4" type="StaticBody2D" parent="." unique_id=2113904653]
+position = Vector2(692, 375)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boca4" unique_id=239666775]
+position = Vector2(0, -22)
+rotation = 1.5707964
+scale = Vector2(0.66594315, -0.23283914)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boca4/CollisionShape2D" unique_id=407920781]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1796460067]
+position = Vector2(697, 202)
+rotation = -3.1415925
+scale = Vector2(0.23283914, -0.66594315)
+
+[node name="Boca5" type="StaticBody2D" parent="Node2D" unique_id=1581854974]
+position = Vector2(1614.8488, 36.03923)
+rotation = -3.1415925
+scale = Vector2(4.294811, -1.5016297)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Boca5" unique_id=997199864]
+position = Vector2(0, -22)
+rotation = 1.5707964
+scale = Vector2(0.66594315, -0.23283914)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Boca5/CollisionShape2D" unique_id=778722284]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Boca7" type="StaticBody2D" parent="Node2D" unique_id=2025022990]
+position = Vector2(820.30884, -3.0032043)
+rotation = -3.1415925
+scale = Vector2(4.294811, -1.5016297)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Boca7" unique_id=124468674]
+rotation = 1.5707964
+scale = Vector2(0.26594308, 2.8071609)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Boca7/CollisionShape2D" unique_id=1941767074]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
+
+[node name="Boca8" type="StaticBody2D" parent="Node2D" unique_id=344276985]
+position = Vector2(0, 33.035843)
+rotation = -3.1415925
+scale = Vector2(4.294811, -1.5016297)
+physics_material_override = SubResource("PhysicsMaterial_mnaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Boca8" unique_id=448474522]
+position = Vector2(0, -22)
+rotation = 1.5707964
+scale = Vector2(0.66594315, -0.23283914)
+shape = SubResource("RectangleShape2D_ub8qx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Boca8/CollisionShape2D" unique_id=1017148400]
+rotation = -1.5707964
+texture = ExtResource("1_8aprp")
