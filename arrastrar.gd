@@ -9,6 +9,8 @@ var pos_raton = Vector2(0, 0)
 var original_position: Vector2
 var basura_position: Vector2
 var boca_position: Vector2
+var padreBoca
+var padreBasura
 var fuerzaDelsake: int = 6
 signal OnTrash
 signal OnMouth
@@ -20,8 +22,10 @@ signal OnMouth
 func _ready():
 	ini_pos = global_position
 	original_position = position
-	basura_position = basura.position
-	boca_position = boca.position
+	padreBasura = basura.get_parent()
+	padreBoca = boca.get_parent()
+	basura_position = padreBasura.position
+	boca_position = padreBoca.position
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click_izq"):
@@ -58,6 +62,6 @@ func _process(delta: float):
 		sakear_lo_demas()
 
 func sakear_lo_demas():
-	boca.position = boca.position.lerp(boca_position + Vector2(randf_range(-fuerzaDelsake, fuerzaDelsake), randf_range(-fuerzaDelsake, fuerzaDelsake)), 0.4)
-	basura.position = basura.position.lerp(basura_position + Vector2(randf_range(-fuerzaDelsake, fuerzaDelsake), randf_range(-fuerzaDelsake, fuerzaDelsake)), 0.4)
+	padreBoca.position = padreBoca.position.lerp(boca_position + Vector2(randf_range(-fuerzaDelsake, fuerzaDelsake), randf_range(-fuerzaDelsake, fuerzaDelsake)), 0.4)
+	padreBasura.position = padreBasura.position.lerp(basura_position + Vector2(randf_range(-fuerzaDelsake, fuerzaDelsake), randf_range(-fuerzaDelsake, fuerzaDelsake)), 0.4)
 	
