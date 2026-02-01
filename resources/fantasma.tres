@@ -4,8 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://63vy2br2aff0" path="res://musica/comer espiritu.mp3" id="2_rnrlp"]
 [ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="3_jln7n"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="4_bt0ub"]
+[ext_resource type="Texture2D" uid="uid://r6qhlog5s3av" path="res://espirites/spriteNegro_1x1.png" id="6_rnrlp"]
 [ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="10_cdxgf"]
-[ext_resource type="Texture2D" uid="uid://c1t4qj0ytwe0q" path="res://espirites/spriteNegro_350x350.png" id="10_jhe8a"]
 [ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="12_2fss0"]
 
 [sub_resource type="Resource" id="Resource_d5va3"]
@@ -22,4 +22,4 @@ _pasos = Array[ExtResource("1_gohii")]([SubResource("Resource_d5va3")])
 script = ExtResource("12_2fss0")
 textoIntro = Array[String](["30 años atrapado en ese espejo", "Y ella te dijo que acabaras conmigo", "Pero al romper el espejo me has dado forma…", "y ahora seré yo el que te va a mascar a ti"])
 mascarData = SubResource("Resource_v1qok")
-onObjetoCogidoTexture = ExtResource("10_jhe8a")
+onObjetoCogidoTexture = ExtResource("6_rnrlp")

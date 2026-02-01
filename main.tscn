@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://i43rvnm2waf3"]
 
 [ext_resource type="Texture2D" uid="uid://b0i57oass5c2o" path="res://icon.svg" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://u7vufwwh1mm6" path="res://scripts/main.gd" id="1_lquwl"]
-[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="2_vivmo"]
+[ext_resource type="Script" uid="uid://cr6mvvf5344gb" path="res://scripts/main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="2_vivmo"]
 [ext_resource type="Resource" uid="uid://8m6iina3b5mo" path="res://resources/vieja.tres" id="3_vivmo"]
 [ext_resource type="Resource" uid="uid://j2y3g51ytud1" path="res://resources/ladron.tres" id="4_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://tn4vp8uhqgj0" path="res://espirites/vieja.png" id="4_5vw27"]
@@ -10,20 +10,21 @@
 [ext_resource type="Resource" uid="uid://bajkc5hskksiq" path="res://resources/amego.tres" id="5_cegan"]
 [ext_resource type="Texture2D" uid="uid://byrn50wmqhswv" path="res://espirites/pasti.png" id="5_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b63ugo6geoqhh" path="res://espirites/truemesa.png" id="5_kek77"]
-[ext_resource type="Script" uid="uid://dtbf150sawjgw" path="res://arrastrar.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://cs2ovra0ro4l1" path="res://arrastrar.gd" id="6_272bh"]
 [ext_resource type="AudioStream" uid="uid://bwb8v5ksy25rb" path="res://musica/pinga.mp3" id="6_d13ii"]
 [ext_resource type="Resource" uid="uid://bhqrx3tk3oo22" path="res://resources/espiritista.tres" id="6_xuqvo"]
 [ext_resource type="AudioStream" uid="uid://cw7eo4s32wn0d" path="res://musica/musica fondo dark chill.mp3" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="7_82xsv"]
-[ext_resource type="AudioStream" uid="uid://dviym5uqj03ba" path="res://musica/pastilla viejo 1.mp3" id="7_qsp4k"]
 [ext_resource type="Resource" uid="uid://174nostbofka" path="res://resources/fantasma.tres" id="7_kq58d"]
-[ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://dviym5uqj03ba" path="res://musica/pastilla viejo 1.mp3" id="7_qsp4k"]
+[ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
 [ext_resource type="Texture2D" uid="uid://d3qlvti417eeh" path="res://espirites/bocaAbierta.png" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://duob2tlfcfoap" path="res://espirites/marcoBoca.png" id="9_getpj"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="11_1u8w0"]
-[ext_resource type="Script" uid="uid://dt1oao6eay2cq" path="res://ladron.gd" id="15_d13ii"]
+[ext_resource type="AudioStream" uid="uid://14v55axakrxc" path="res://musica/papelera.mp3" id="11_htxhm"]
+[ext_resource type="Script" uid="uid://dshgc53h7csst" path="res://ladron.gd" id="15_d13ii"]
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Texture2D" uid="uid://di3ixbnogq4mh" path="res://espirites/fantasma.png" id="17_seu75"]
@@ -31,6 +32,17 @@
 [ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cp376by3ytg07" path="res://espirites/espiritista.png" id="21_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://bl6q3ndphlg1l" path="res://espirites/espejo.png" id="22_a6jrf"]
+
+[sub_resource type="GDScript" id="GDScript_cegan"]
+script/source = "extends Area2D
+
+
+func _ready() -> void:
+	body_entered
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_getpj"]
+size = Vector2(12.626457, 13.368676)
 
 [sub_resource type="Animation" id="Animation_7mycd"]
 length = 0.001
@@ -89,7 +101,7 @@ atlas = ExtResource("17_seu75")
 region = Rect2(520, 181, 267, 274)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(177.64648, 168.6817)
+size = Vector2(191.11911, 101.50637)
 
 [sub_resource type="Animation" id="Animation_5vw27"]
 length = 0.001
@@ -102,17 +114,6 @@ _data = {
 &"RESET": SubResource("Animation_5vw27"),
 &"appear": SubResource("Animation_kek77")
 }
-
-[sub_resource type="GDScript" id="GDScript_cegan"]
-script/source = "extends Area2D
-
-
-func _ready() -> void:
-	body_entered
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_getpj"]
-size = Vector2(12.626457, 13.368676)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
 atlas = ExtResource("5_efxa6")
@@ -139,7 +140,7 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
-[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "mascarMiniGame", "nodosPersonaje")]
+[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "sonidoBasura", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 introTexts = Array[String](["Buenas tardes", "Que lo que mucha suerte"])
 outroTexts = Array[String](["Gracias por jugar"])
@@ -150,6 +151,7 @@ TextoIntro = NodePath("BlackScreen/ColorRect/Label")
 sonidoPasarTexto = NodePath("pasarTexto")
 sonidoMordisco = NodePath("sonidoMascar")
 background = NodePath("background")
+sonidoBasura = NodePath("sonidoBasura")
 mascarMiniGame = NodePath("Mascar")
 personajes = Array[ExtResource("2_vivmo")]([ExtResource("3_vivmo"), ExtResource("4_2cqfq"), ExtResource("5_cegan"), ExtResource("6_xuqvo"), ExtResource("7_kq58d")])
 nodosPersonaje = [NodePath("vieja"), NodePath("ladron"), NodePath("amego"), NodePath("espiritista"), NodePath("fantasma")]
@@ -168,31 +170,8 @@ stream = ExtResource("7_1u8w0")
 volume_db = -42.269
 autoplay = true
 
-[node name="fantasma" type="Sprite2D" parent="." unique_id=1098685311]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(512, 384)
-texture = ExtResource("17_seu75")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma" unique_id=693398228]
-libraries/ = SubResource("AnimationLibrary_5vw27")
-
-[node name="spriteObjeto" type="Sprite2D" parent="fantasma" unique_id=1293520705 node_paths=PackedStringArray("boca", "basura")]
-position = Vector2(141, -62)
-texture = SubResource("AtlasTexture_htxhm")
-script = ExtResource("6_272bh")
-boca = NodePath("../../Mascar/pos_boca")
-basura = NodePath("../../basura/pos_basura")
-
-[node name="Area2D" type="Area2D" parent="fantasma/spriteObjeto" unique_id=1780902411]
-position = Vector2(0.9999999, 20)
-scale = Vector2(3.1600013, 3.5600007)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fantasma/spriteObjeto/Area2D" unique_id=2085387551]
-scale = Vector2(0.49867204, 0.44000125)
-shape = SubResource("RectangleShape2D_5vw27")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma/spriteObjeto" unique_id=121249589]
-libraries/ = SubResource("AnimationLibrary_4c57u")
+[node name="sonidoBasura" type="AudioStreamPlayer2D" parent="." unique_id=327479000]
+stream = ExtResource("11_htxhm")
 
 [node name="basura" type="Sprite2D" parent="." unique_id=996691720]
 position = Vector2(512, 384)
@@ -204,7 +183,6 @@ position = Vector2(-315, 200)
 texture = ExtResource("1_0xm2m")
 
 [node name="Mascar" type="Sprite2D" parent="." unique_id=1299971976 node_paths=PackedStringArray("_mascarArea")]
-visible = false
 position = Vector2(518, 384)
 texture = ExtResource("7_82xsv")
 script = ExtResource("20_82xsv")
@@ -229,6 +207,33 @@ script = SubResource("GDScript_cegan")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mascar/Area2D" unique_id=172974781]
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_getpj")
+
+[node name="fantasma" type="Sprite2D" parent="." unique_id=1098685311]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(512, 384)
+texture = ExtResource("17_seu75")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma" unique_id=693398228]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="spriteObjeto" type="Sprite2D" parent="fantasma" unique_id=1293520705 node_paths=PackedStringArray("boca", "basura")]
+position = Vector2(141, -62)
+texture = SubResource("AtlasTexture_htxhm")
+script = ExtResource("6_272bh")
+boca = NodePath("../../Mascar/pos_boca")
+basura = NodePath("../../basura/pos_basura")
+
+[node name="Area2D" type="Area2D" parent="fantasma/spriteObjeto" unique_id=1780902411]
+position = Vector2(0.9999999, 20)
+scale = Vector2(3.1600013, 3.5600007)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fantasma/spriteObjeto/Area2D" unique_id=2085387551]
+position = Vector2(4.1139226, 2.5280905)
+scale = Vector2(0.37193996, 0.37540707)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma/spriteObjeto" unique_id=121249589]
+libraries/ = SubResource("AnimationLibrary_4c57u")
 
 [node name="vieja" type="Sprite2D" parent="." unique_id=1923758419]
 modulate = Color(1, 1, 1, 0)
@@ -305,7 +310,8 @@ basura = NodePath("../../basura/pos_basura")
 position = Vector2(-1, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="espiritista/spriteObjeto/Area2D" unique_id=919760674]
-scale = Vector2(0.77867204, 2.1600013)
+position = Vector2(2.5245972, -51.49997)
+scale = Vector2(0.5386732, 1.5200026)
 shape = SubResource("RectangleShape2D_5vw27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="espiritista/spriteObjeto" unique_id=2040637916]

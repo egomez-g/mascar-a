@@ -8,9 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://ck53tvk1qph24" path="res://musica/deglutir.mp3" id="6_dwmud"]
 [ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="7_m6jwc"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="9_k04by"]
-[ext_resource type="Script" uid="uid://c7afjj4lv2pqf" path="res://scripts/Pasos/Pasos.gd" id="10_aql0w"]
+[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="10_aql0w"]
 [ext_resource type="Texture2D" uid="uid://blof1ckk3yqde" path="res://espirites/espiritistaSin.png" id="11_dwxho"]
-[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="12_j0dlu"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="12_j0dlu"]
 
 [sub_resource type="Resource" id="Resource_d5va3"]
 script = ExtResource("1_dwxho")

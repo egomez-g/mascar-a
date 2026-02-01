@@ -23,6 +23,7 @@ enum Estados {
 @export var sonidoPasarTexto: AudioStreamPlayer2D
 @export var sonidoMordisco: AudioStreamPlayer2D
 @export var background: AudioStreamPlayer2D
+@export var sonidoBasura: AudioStreamPlayer2D
 
 var text_i: int = 0
 var personajes_i: int = 0
@@ -143,6 +144,7 @@ func OnMascarEnded():
 	text_i = 0
 	
 func  OnObjetoArrastradoTrash():
+	sonidoBasura.play()
 	OnObjetoArrastrado()
 	mascado = false
 	estado = Estados.HABLANDOPOST
