@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://un8wrtkvh3ba" path="res://espirites/bocaIzquierda.png" id="4_u17xr"]
 [ext_resource type="AudioStream" uid="uid://u2lctjc2n01h" path="res://musica/comer arma.mp3" id="4_wjaur"]
 [ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="5_wjaur"]
-[ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="6_txxq7"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="7_tjp6i"]
 [ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="8_5t5fx"]
 [ext_resource type="AudioStream" uid="uid://ck53tvk1qph24" path="res://musica/deglutir.mp3" id="8_txxq7"]
-[ext_resource type="Texture2D" uid="uid://5upv4chmrvsg" path="res://espirites/ladronTriste.png" id="9_v515b"]
+[ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="8_u17xr"]
+[ext_resource type="Texture2D" uid="uid://5upv4chmrvsg" path="res://espirites/ladronTriste.png" id="11_wjaur"]
 
 [sub_resource type="Resource" id="Resource_d5va3"]
 script = ExtResource("1_pk161")
@@ -25,11 +25,12 @@ sprite1 = ExtResource("4_u17xr")
 sprite2 = ExtResource("3_mgf51")
 sonido = ExtResource("4_wjaur")
 
-[sub_resource type="Resource" id="Resource_3s824"]
+[sub_resource type="Resource" id="Resource_txxq7"]
 script = ExtResource("1_pk161")
 sprite1 = ExtResource("5_wjaur")
-sprite2 = ExtResource("6_txxq7")
+sprite2 = ExtResource("8_u17xr")
 sonido = ExtResource("8_txxq7")
+metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
 
 [sub_resource type="Resource" id="Resource_4ahsx"]
 script = ExtResource("1_pk161")
@@ -46,7 +47,7 @@ metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
 
 [sub_resource type="Resource" id="Resource_v1qok"]
 script = ExtResource("8_5t5fx")
-_pasos = Array[ExtResource("1_pk161")]([SubResource("Resource_d5va3"), SubResource("Resource_b4ihl"), SubResource("Resource_3s824"), SubResource("Resource_4ahsx"), SubResource("Resource_tjp6i")])
+_pasos = Array[ExtResource("1_pk161")]([SubResource("Resource_d5va3"), SubResource("Resource_b4ihl"), SubResource("Resource_txxq7"), SubResource("Resource_4ahsx"), SubResource("Resource_tjp6i")])
 
 [resource]
 script = ExtResource("1_0r5nj")
@@ -54,4 +55,4 @@ textoIntro = Array[String](["DAME TODO LO QUE TENGAS JODEEER", "ME ESTOY PONIEND
 textoPostMascar = Array[String](["¡¡¿¿ PERO QUE COJONES HACES ??!!", "ESTAS TOCADO DE LA CABEZA COLEGA", "VAYA PUTA CIUDAD DE COLGADOS, ME PIRO DE AQUÍ"])
 textoPostThrash = Array[String](["¿Pero…?"])
 mascarData = SubResource("Resource_v1qok")
-onObjetoCogidoTexture = ExtResource("9_v515b")
+onObjetoCogidoTexture = ExtResource("11_wjaur")

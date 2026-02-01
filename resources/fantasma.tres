@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://174nostbofka"]
+
+[ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_gohii"]
+[ext_resource type="AudioStream" uid="uid://u2lctjc2n01h" path="res://musica/comer arma.mp3" id="2_binv3"]
+[ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="3_jln7n"]
+[ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="4_bt0ub"]
+[ext_resource type="Texture2D" uid="uid://un8wrtkvh3ba" path="res://espirites/bocaIzquierda.png" id="5_wtkx4"]
+[ext_resource type="AudioStream" uid="uid://ck53tvk1qph24" path="res://musica/deglutir.mp3" id="6_ahv0y"]
+[ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="7_68cxp"]
+[ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="9_ckpwj"]
+[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="10_cdxgf"]
+[ext_resource type="Texture2D" uid="uid://c1t4qj0ytwe0q" path="res://espirites/spriteNegro_350x350.png" id="10_jhe8a"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="12_2fss0"]
+
+[sub_resource type="Resource" id="Resource_d5va3"]
+script = ExtResource("1_gohii")
+sprite1 = ExtResource("3_jln7n")
+sprite2 = ExtResource("4_bt0ub")
+sonido = ExtResource("2_binv3")
+
+[sub_resource type="Resource" id="Resource_b4ihl"]
+script = ExtResource("1_gohii")
+sprite1 = ExtResource("5_wtkx4")
+sprite2 = ExtResource("4_bt0ub")
+sonido = ExtResource("2_binv3")
+
+[sub_resource type="Resource" id="Resource_4ahsx"]
+script = ExtResource("1_gohii")
+sprite1 = ExtResource("3_jln7n")
+sprite2 = ExtResource("9_ckpwj")
+sonido = ExtResource("2_binv3")
+
+[sub_resource type="Resource" id="Resource_tjp6i"]
+script = ExtResource("1_gohii")
+sprite1 = ExtResource("7_68cxp")
+sprite2 = ExtResource("4_bt0ub")
+sonido = ExtResource("6_ahv0y")
+metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
+
+[sub_resource type="Resource" id="Resource_v1qok"]
+script = ExtResource("10_cdxgf")
+_pasos = Array[ExtResource("1_gohii")]([SubResource("Resource_d5va3"), SubResource("Resource_b4ihl"), SubResource("Resource_4ahsx"), SubResource("Resource_tjp6i")])
+
+[resource]
+script = ExtResource("12_2fss0")
+textoIntro = Array[String](["30 años atrapado en ese espejo", "Y ella te dijo que acabaras conmigo", "Pero al romper el espejo me has dado forma…", "y ahora seré yo el que te va a mascar a ti"])
+mascarData = SubResource("Resource_v1qok")
+onObjetoCogidoTexture = ExtResource("10_jhe8a")
