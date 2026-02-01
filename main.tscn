@@ -136,6 +136,7 @@ shader_parameter/blur_samples = 15
 [node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 introTexts = Array[String](["Buenas tardes", "Que lo que mucha suerte"])
+outroTexts = Array[String](["Gracias por jugar"])
 blackScreenOverlay = NodePath("BlackScreen")
 MascarTitulo = NodePath("BlackScreen/ColorRect/Control/Label")
 MascarTituloA = NodePath("BlackScreen/ColorRect/Control/Label2")
