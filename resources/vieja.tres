@@ -36,7 +36,7 @@ _pasos = Array[ExtResource("1_0t6fk")]([SubResource("Resource_s5rce"), SubResour
 
 [resource]
 script = ExtResource("1_0o53s")
-textoIntro = Array[String](["P-p-perdona joven… Ne-necesito tu ayuda, he escuchado q-q-que partes cosas", "La enfermera me sigue d-d-dando las pastillas de siempre", "¿Podrías ayudarme? t-tengo dineroo las pastillas de siempre."])
+textoIntro = Array[String](["P-p-perdona joven… Ne-necesito tu ayuda, he escuchado q-q-que partes cosas", "La enfermera me sigue d-d-dando las pastillas de siempre", "¿Podrías ayudarme? t-tengo dinero."])
 textoPostMascar = Array[String](["Gracias joven", "No sabes el favor que me has hecho", "No quiero tener que t-tratar con la enfermera"])
 textoPostThrash = Array[String](["V-vale perdona, no q-quería molestarte", "Ya me aviso e-el de la limpieza que no viniera"])
 mascarData = SubResource("Resource_baqnp")

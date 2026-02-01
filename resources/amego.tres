@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="6_q7qa7"]
 [ext_resource type="AudioStream" uid="uid://b8hypvnaosdht" path="res://musica/segarro 3.mp3" id="7_cmgqo"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="8_enn6f"]
+[ext_resource type="AudioStream" uid="uid://ck53tvk1qph24" path="res://musica/deglutir.mp3" id="8_q7qa7"]
 
 [sub_resource type="Resource" id="Resource_s5rce"]
 script = ExtResource("1_darsj")
@@ -26,17 +27,24 @@ sonido = ExtResource("5_q7qa7")
 [sub_resource type="Resource" id="Resource_c78qw"]
 script = ExtResource("1_darsj")
 sprite1 = ExtResource("2_hurad")
-sprite2 = ExtResource("8_enn6f")
+sprite2 = ExtResource("3_y6p2b")
 sonido = ExtResource("7_cmgqo")
+metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
+
+[sub_resource type="Resource" id="Resource_cmgqo"]
+script = ExtResource("1_darsj")
+sprite1 = ExtResource("2_hurad")
+sprite2 = ExtResource("8_enn6f")
+sonido = ExtResource("8_q7qa7")
 metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
 
 [sub_resource type="Resource" id="Resource_baqnp"]
 script = ExtResource("5_b3piy")
-_pasos = Array[ExtResource("1_darsj")]([SubResource("Resource_s5rce"), SubResource("Resource_gqhbw"), SubResource("Resource_c78qw")])
+_pasos = Array[ExtResource("1_darsj")]([SubResource("Resource_s5rce"), SubResource("Resource_gqhbw"), SubResource("Resource_c78qw"), SubResource("Resource_cmgqo")])
 
 [resource]
 script = ExtResource("6_q7qa7")
-textoIntro = Array[String](["Tío, te veo muy tenso ¿Ha pasado algo? ¿Quieres un cigarro?ecesito tu ayuda"])
+textoIntro = Array[String](["Tío, te veo muy tenso ¿Ha pasado algo? ¿Quieres un cigarro?"])
 textoPostMascar = Array[String](["¿¿Te acabas… de comer… el cigarro??"])
 textoPostThrash = Array[String](["Eh… ¿Qué haces? Si no lo querías solo tenias que decírmelo subnormal"])
 mascarData = SubResource("Resource_baqnp")

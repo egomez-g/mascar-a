@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u2lctjc2n01h"
+path="res://.godot/imported/comer arma.mp3-478d3c10c637cd5e684b7a1927424147.mp3str"
+
+[deps]
+
+source_file="res://musica/comer arma.mp3"
+dest_files=["res://.godot/imported/comer arma.mp3-478d3c10c637cd5e684b7a1927424147.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
