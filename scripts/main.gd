@@ -110,25 +110,31 @@ func avanzar_juego():
 				text_i += 1
 				sonidoPasarTexto.play()
 			else:
-				if personajes_i == nodosPersonaje.size():
-					blackScreenOverlay.visible = true
-					TextoIntro.visible = true
-					text_i = 0
-					estado = Estados.OUTRO
-				else:
-					GoNextPersonaje()
+				NextPersonajeOrEnd()
 		else:
 			if text_i < get_current_personaje_data().textoPostThrash.size():
 				zonaTexto.text = get_current_personaje_data().textoPostThrash[text_i]
 				text_i += 1
 				sonidoPasarTexto.play()
 			else:
-				GoNextPersonaje()
+				NextPersonajeOrEnd()
 	elif  estado == Estados.OUTRO:
-		if text_i < get_current_personaje_data().textoIntro.size():
+		if text_i < outroTexts.size():
 			TextoIntro.text = outroTexts[text_i]
 			text_i += 1
 			sonidoPasarTexto.play()
+
+func NextPersonajeOrEnd():
+	print(personajes_i)
+	print(personajes.size())
+	if personajes_i == personajes.size() - 1:
+		blackScreenOverlay.visible = true
+		TextoIntro.visible = true
+		text_i = 0
+		estado = Estados.OUTRO
+	else:
+		GoNextPersonaje()
+
 
 func OnStartGrab():
 	currentGrab.OnStartGrab.disconnect(OnStartGrab)

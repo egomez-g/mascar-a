@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cw7eo4s32wn0d" path="res://musica/musica fondo dark chill.mp3" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="7_82xsv"]
 [ext_resource type="Resource" uid="uid://174nostbofka" path="res://resources/fantasma.tres" id="7_kq58d"]
+[ext_resource type="Resource" uid="uid://174nostbofka" path="res://resources/fantasma.tres" id="7_kq58d"]
 [ext_resource type="AudioStream" uid="uid://dviym5uqj03ba" path="res://musica/pastilla viejo 1.mp3" id="7_qsp4k"]
 [ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
@@ -28,8 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Texture2D" uid="uid://di3ixbnogq4mh" path="res://espirites/fantasma.png" id="17_seu75"]
-[ext_resource type="Script" uid="uid://c4tkx5v5u6xyc" path="res://cursor.gd" id="19_82xsv"]
-[ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
+[ext_resource type="Script" uid="uid://cyaqnrwly5qsb" path="res://cursor.gd" id="19_82xsv"]
+[ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cp376by3ytg07" path="res://espirites/espiritista.png" id="21_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://bl6q3ndphlg1l" path="res://espirites/espejo.png" id="22_a6jrf"]
 
