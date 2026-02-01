@@ -170,7 +170,7 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(527, 415.5)
 scale = Vector2(9.234375, 7.4921875)
 stream = ExtResource("7_1u8w0")
-volume_db = -42.269
+volume_db = -14.062
 autoplay = true
 
 [node name="sonidoBasura" type="AudioStreamPlayer2D" parent="." unique_id=327479000]
