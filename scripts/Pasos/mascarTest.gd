@@ -9,6 +9,7 @@ var ini_pos: Vector2
 var fuerzaDelsake: int = 12
 var playSake: bool = false
 var canGoNext: bool = true
+var lastRandValue = -0.1
 signal StepsEnded
 @export var bocaNeutra: Texture
 
@@ -44,11 +45,17 @@ func next() -> void:
 			await  PlayAnimation()
 			currentIndex += 1
 		else:
+			rotation = 0
 			currentIndex = 0
 			StepsEnded.emit()
 
 func PlayAnimation() -> void:
 	playSake = true
+	if lastRandValue <= 0:
+		rotation = randf_range(0.2, 0.08)
+	else:
+		rotation = randf_range(-0.2, -0.08)
+	lastRandValue = rotation
 	canGoNext = false
 	audio_player.stream = _pasos._pasos[currentIndex].sonido
 	audio_player.play()
