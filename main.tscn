@@ -25,12 +25,12 @@
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="11_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://14v55axakrxc" path="res://musica/papelera.mp3" id="11_htxhm"]
 [ext_resource type="AudioStream" uid="uid://bh83g1gki58g6" path="res://musica/cogerte cosas.mp3" id="12_jq2sk"]
-[ext_resource type="Script" uid="uid://dshgc53h7csst" path="res://ladron.gd" id="15_d13ii"]
+[ext_resource type="Script" uid="uid://dt1oao6eay2cq" path="res://ladron.gd" id="15_d13ii"]
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Texture2D" uid="uid://di3ixbnogq4mh" path="res://espirites/fantasma.png" id="17_seu75"]
-[ext_resource type="Script" uid="uid://c4tkx5v5u6xyc" path="res://cursor.gd" id="19_82xsv"]
-[ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
+[ext_resource type="Script" uid="uid://cyaqnrwly5qsb" path="res://cursor.gd" id="19_82xsv"]
+[ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cp376by3ytg07" path="res://espirites/espiritista.png" id="21_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://bl6q3ndphlg1l" path="res://espirites/espejo.png" id="22_a6jrf"]
 [ext_resource type="FontFile" uid="uid://bundkajq1xiiq" path="res://fonts/Rubik_Burned/RubikBurned-Regular.ttf" id="32_jq2sk"]
@@ -103,7 +103,7 @@ atlas = ExtResource("17_seu75")
 region = Rect2(520, 181, 267, 274)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(191.11911, 101.50637)
+size = Vector2(360.95874, 204.54492)
 
 [sub_resource type="Animation" id="Animation_5vw27"]
 length = 0.001
@@ -145,7 +145,7 @@ shader_parameter/blur_samples = 15
 [node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "sonidoBasura", "sonidoGrab", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 introTexts = Array[String](["Viene faena", "Prepara la mandíbula"])
-outroTexts = Array[String](["La pregunta nunca fue qué mascar", "Sino con qué te quedas después de tragar"])
+outroTexts = Array[String](["La pregunta nunca fue qué mascar", "Sino con qué te quedas después de tragar", "UN JUEGO POR: SANTI, EDU, DAVID, AITOR", "GRACIAS POR JUGAR"])
 blackScreenOverlay = NodePath("BlackScreen")
 MascarTitulo = NodePath("BlackScreen/ColorRect/Control/Label")
 MascarTituloA = NodePath("BlackScreen/ColorRect/Control/Label2")
@@ -189,6 +189,7 @@ position = Vector2(-315, 200)
 texture = ExtResource("1_0xm2m")
 
 [node name="Mascar" type="Sprite2D" parent="." unique_id=1299971976 node_paths=PackedStringArray("_mascarArea")]
+visible = false
 position = Vector2(518, 384)
 texture = ExtResource("7_82xsv")
 script = ExtResource("20_82xsv")
@@ -451,7 +452,8 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1024.0
+offset_left = 12.0
+offset_right = 1036.0
 offset_bottom = 768.0
 
 [node name="ColorRect" type="ColorRect" parent="shader2" unique_id=1151871324]
