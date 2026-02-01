@@ -136,8 +136,8 @@ region = Rect2(518, 317, 80, 92)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
 shader = ExtResource("8_5vw27")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
+shader_parameter/wiggle = 0.08999999798832
+shader_parameter/wiggle_speed = 2.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
