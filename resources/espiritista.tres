@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://bhqrx3tk3oo22"]
 
 [ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_dwxho"]
-[ext_resource type="AudioStream" uid="uid://u2lctjc2n01h" path="res://musica/comer arma.mp3" id="2_52ucc"]
+[ext_resource type="AudioStream" uid="uid://cmjkd5kb0vc7r" path="res://musica/cristal espiritista 1.mp3" id="2_art2v"]
 [ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="3_4ynqn"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="4_6vl4e"]
+[ext_resource type="AudioStream" uid="uid://hbpyopfj4heb" path="res://musica/cristal espiritista 2.mp3" id="5_dwxho"]
 [ext_resource type="AudioStream" uid="uid://ck53tvk1qph24" path="res://musica/deglutir.mp3" id="6_dwmud"]
 [ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="7_m6jwc"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="9_k04by"]
@@ -15,13 +16,13 @@
 script = ExtResource("1_dwxho")
 sprite1 = ExtResource("3_4ynqn")
 sprite2 = ExtResource("4_6vl4e")
-sonido = ExtResource("2_52ucc")
+sonido = ExtResource("2_art2v")
 
 [sub_resource type="Resource" id="Resource_4ahsx"]
 script = ExtResource("1_dwxho")
 sprite1 = ExtResource("3_4ynqn")
 sprite2 = ExtResource("9_k04by")
-sonido = ExtResource("2_52ucc")
+sonido = ExtResource("5_dwxho")
 
 [sub_resource type="Resource" id="Resource_tjp6i"]
 script = ExtResource("1_dwxho")

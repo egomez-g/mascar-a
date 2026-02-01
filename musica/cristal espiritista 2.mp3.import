@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hbpyopfj4heb"
+path="res://.godot/imported/cristal espiritista 2.mp3-9551f10ea35599d40a5c94e7603605a3.mp3str"
+
+[deps]
+
+source_file="res://musica/cristal espiritista 2.mp3"
+dest_files=["res://.godot/imported/cristal espiritista 2.mp3-9551f10ea35599d40a5c94e7603605a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
