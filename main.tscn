@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://cw7eo4s32wn0d" path="res://musica/musica fondo dark chill.mp3" id="7_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="7_82xsv"]
 [ext_resource type="Resource" uid="uid://174nostbofka" path="res://resources/fantasma.tres" id="7_kq58d"]
-[ext_resource type="Resource" uid="uid://174nostbofka" path="res://resources/fantasma.tres" id="7_kq58d"]
 [ext_resource type="AudioStream" uid="uid://dviym5uqj03ba" path="res://musica/pastilla viejo 1.mp3" id="7_qsp4k"]
 [ext_resource type="Shader" uid="uid://cua4nccfij05v" path="res://main.gdshader" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
@@ -25,12 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://duob2tlfcfoap" path="res://espirites/marcoBoca.png" id="9_getpj"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="11_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://14v55axakrxc" path="res://musica/papelera.mp3" id="11_htxhm"]
+[ext_resource type="AudioStream" uid="uid://bh83g1gki58g6" path="res://musica/cogerte cosas.mp3" id="12_jq2sk"]
 [ext_resource type="Script" uid="uid://dshgc53h7csst" path="res://ladron.gd" id="15_d13ii"]
 [ext_resource type="Texture2D" uid="uid://byi7j3es2ksjk" path="res://espirites/amego.png" id="15_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Texture2D" uid="uid://di3ixbnogq4mh" path="res://espirites/fantasma.png" id="17_seu75"]
-[ext_resource type="Script" uid="uid://cyaqnrwly5qsb" path="res://cursor.gd" id="19_82xsv"]
-[ext_resource type="Script" uid="uid://bh1aeiu5fwmk2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
+[ext_resource type="Script" uid="uid://c4tkx5v5u6xyc" path="res://cursor.gd" id="19_82xsv"]
+[ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cp376by3ytg07" path="res://espirites/espiritista.png" id="21_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://bl6q3ndphlg1l" path="res://espirites/espejo.png" id="22_a6jrf"]
 
@@ -141,7 +141,7 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
-[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "sonidoBasura", "mascarMiniGame", "nodosPersonaje")]
+[node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "sonidoBasura", "sonidoGrab", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 introTexts = Array[String](["Buenas tardes", "Que lo que mucha suerte"])
 outroTexts = Array[String](["Gracias por jugar"])
@@ -153,6 +153,7 @@ sonidoPasarTexto = NodePath("pasarTexto")
 sonidoMordisco = NodePath("sonidoMascar")
 background = NodePath("background")
 sonidoBasura = NodePath("sonidoBasura")
+sonidoGrab = NodePath("sonidoGrab")
 mascarMiniGame = NodePath("Mascar")
 personajes = Array[ExtResource("2_vivmo")]([ExtResource("3_vivmo"), ExtResource("4_2cqfq"), ExtResource("5_cegan"), ExtResource("6_xuqvo"), ExtResource("7_kq58d")])
 nodosPersonaje = [NodePath("vieja"), NodePath("ladron"), NodePath("amego"), NodePath("espiritista"), NodePath("fantasma")]
@@ -173,6 +174,9 @@ autoplay = true
 
 [node name="sonidoBasura" type="AudioStreamPlayer2D" parent="." unique_id=327479000]
 stream = ExtResource("11_htxhm")
+
+[node name="sonidoGrab" type="AudioStreamPlayer2D" parent="." unique_id=1880311864]
+stream = ExtResource("12_jq2sk")
 
 [node name="basura" type="Sprite2D" parent="." unique_id=996691720]
 position = Vector2(512, 384)

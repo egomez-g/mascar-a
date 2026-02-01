@@ -20,6 +20,8 @@ signal OnStartGrab
 @export var basura: Node2D
 @export var isSakeable: bool
 
+@onready var audioGrab = get_node("../../sonidoGrab")
+
 func _ready():
 	ini_pos = global_position
 	original_position = position
@@ -30,6 +32,7 @@ func _ready():
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click_izq"):
+		audioGrab.play()
 		OnStartGrab.emit()
 		selected = true
 		ini_pos = global_position
