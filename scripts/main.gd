@@ -2,14 +2,26 @@ extends Node2D
 class_name main
 
 enum Estados {
+	INTRO,
 	INICIO,
 	HABLANDO,
 	SIGUIENTE_PJ,
 	MASCAR,
 	HABLANDOPOST,
+	OUTRO
 }
 
+@export var introTexts : Array[String]
+@export var outroTexts : Array[String]
+
+@export var blackScreenOverlay: Control
+@export var MascarTitulo : Label
+@export var MascarTituloA : Label
+@export var TextoIntro : Label
+
+
 @export var sonidoPasarTexto: AudioStreamPlayer2D
+@export var sonidoMordisco: AudioStreamPlayer2D
 @export var background: AudioStreamPlayer2D
 
 var text_i: int = 0
@@ -35,8 +47,8 @@ func  get_current_personaje_node() -> Sprite2D:
 	return nodosPersonaje[personajes_i]
 
 func _ready():
-	estado = Estados.INICIO
-	zonaTexto.text = "PULSA 'A'"
+	estado = Estados.INTRO
+	zonaTexto.text = ""
 	for nodoPersonaje in nodosPersonaje:
 		(nodoPersonaje.find_child("CollisionShape2D") as CollisionShape2D).disabled = true
 
@@ -45,7 +57,24 @@ func _input(event: InputEvent) -> void:
 		avanzar_juego()
 
 func avanzar_juego():
-	if estado == Estados.INICIO:
+	if  estado == Estados.INTRO:
+		if MascarTitulo.visible == false:
+			if text_i < introTexts.size():
+				TextoIntro.text = introTexts[text_i]
+				sonidoPasarTexto.play()
+				text_i += 1
+			else: 
+				estado = Estados.INICIO
+				blackScreenOverlay.visible = false
+				text_i = 0
+		else:
+			TextoIntro.visible = true
+			MascarTitulo.visible = false
+			MascarTituloA.visible = false
+			TextoIntro.text = ""
+			sonidoMordisco.play()
+			
+	elif estado == Estados.INICIO:
 		UpdateCurrentPersonaje()
 		get_current_personaje_node().get_node("AnimationPlayer").play("appear")
 		get_current_personaje_node().get_node("./spriteObjeto/AnimationPlayer").play("appear")
@@ -57,6 +86,8 @@ func avanzar_juego():
 			text_i += 1
 			sonidoPasarTexto.play()
 		else:
+			if personajes_i == 0:
+				mascarMiniGame.visible = true
 			get_current_personaje_node().get_node("spriteObjeto").isSakeable = true
 			zonaTexto.text = ""
 			currentGrab.OnStartGrab.connect(OnStartGrab)
@@ -85,6 +116,10 @@ func avanzar_juego():
 				sonidoPasarTexto.play()
 			else:
 				GoNextPersonaje()
+	elif  estado == Estados.OUTRO:
+		blackScreenOverlay.visible = true
+		
+		
 
 func OnStartGrab():
 	currentGrab.OnStartGrab.disconnect(OnStartGrab)
