@@ -126,11 +126,10 @@ func avanzar_juego():
 			sonidoPasarTexto.play()
 
 func NextPersonajeOrEnd():
-	print(personajes_i)
-	print(personajes.size())
 	if personajes_i == personajes.size() - 1:
 		blackScreenOverlay.visible = true
 		TextoIntro.visible = true
+		TextoIntro.text = ""
 		text_i = 0
 		estado = Estados.OUTRO
 	else:
