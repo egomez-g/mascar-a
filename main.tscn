@@ -25,8 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://c1162dhlqimtf" path="res://espirites/segarro.png" id="16_d13ii"]
 [ext_resource type="Script" uid="uid://c4tkx5v5u6xyc" path="res://cursor.gd" id="19_82xsv"]
 [ext_resource type="Script" uid="uid://cwsmt6ncw8lm2" path="res://scripts/Pasos/mascarTest.gd" id="20_82xsv"]
-[ext_resource type="Texture2D" uid="uid://bowvesheyisfe" path="res://espirites/espiritista.png" id="21_a6jrf"]
-[ext_resource type="Texture2D" uid="uid://c4vll52ijhbud" path="res://espirites/espejoMano.png" id="22_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://cp376by3ytg07" path="res://espirites/espiritista.png" id="21_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://bl6q3ndphlg1l" path="res://espirites/espejo.png" id="22_a6jrf"]
 
 [sub_resource type="GDScript" id="GDScript_cegan"]
 script/source = "extends Area2D
@@ -114,11 +114,15 @@ _data = {
 atlas = ExtResource("8_dg77c")
 region = Rect2(424, 511, 126, 172)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0odxb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuqvo"]
+atlas = ExtResource("22_a6jrf")
+region = Rect2(604, 325, 123, 335)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u8w0"]
 atlas = ExtResource("16_d13ii")
 region = Rect2(518, 317, 80, 92)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0odxb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
 shader = ExtResource("8_5vw27")
@@ -243,23 +247,21 @@ texture = ExtResource("21_a6jrf")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="espiritista" unique_id=824443457]
 libraries/ = SubResource("AnimationLibrary_5vw27")
 
-[node name="spriteObjeto" type="Sprite2D" parent="espiritista" unique_id=1066547750 node_paths=PackedStringArray("boca", "basura")]
-position = Vector2(28, 2)
-texture = ExtResource("22_xuqvo")
+[node name="spriteObjeto" type="Sprite2D" parent="espiritista" unique_id=314322359 node_paths=PackedStringArray("boca", "basura")]
+position = Vector2(156, 109)
+texture = SubResource("AtlasTexture_xuqvo")
 script = ExtResource("6_272bh")
 boca = NodePath("../../Mascar/pos_boca")
 basura = NodePath("../../basura/pos_basura")
 
-[node name="Area2D" type="Area2D" parent="espiritista/spriteObjeto" unique_id=884528739]
+[node name="Area2D" type="Area2D" parent="espiritista/spriteObjeto" unique_id=23804220]
 position = Vector2(-1, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="espiritista/spriteObjeto/Area2D" unique_id=1510837800]
-position = Vector2(2, 0)
-rotation = -2.5619757
-scale = Vector2(4.0608783, -8.726042)
-shape = SubResource("CircleShape2D_0odxb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="espiritista/spriteObjeto/Area2D" unique_id=919760674]
+scale = Vector2(0.77867204, 2.1600013)
+shape = SubResource("RectangleShape2D_5vw27")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="espiritista/spriteObjeto" unique_id=971476568]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="espiritista/spriteObjeto" unique_id=2040637916]
 libraries/ = SubResource("AnimationLibrary_4c57u")
 
 [node name="amego" type="Sprite2D" parent="." unique_id=722973865]
@@ -311,6 +313,7 @@ vertical_alignment = 1
 script = ExtResource("19_82xsv")
 
 [node name="shader2" type="Control" parent="." unique_id=125821447]
+visible = false
 custom_minimum_size = Vector2(1024, 768)
 layout_mode = 3
 anchors_preset = 0

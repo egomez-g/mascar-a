@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4vll52ijhbud"
-path="res://.godot/imported/espejoMano.png-470d6b3141976141589ec9b5072e05be.ctex"
+uid="uid://blof1ckk3yqde"
+path="res://.godot/imported/espiritistaSin.png-e72663d1e848768a41862d277f87ee65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://espirites/espejoMano.png"
-dest_files=["res://.godot/imported/espejoMano.png-470d6b3141976141589ec9b5072e05be.ctex"]
+source_file="res://espirites/espiritistaSin.png"
+dest_files=["res://.godot/imported/espiritistaSin.png-e72663d1e848768a41862d277f87ee65.ctex"]
 
 [params]
 
