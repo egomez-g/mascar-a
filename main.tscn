@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://174nostbofka" path="res://resources/fantasma.tres" id="7_kq58d"]
 [ext_resource type="AudioStream" uid="uid://dviym5uqj03ba" path="res://musica/pastilla viejo 1.mp3" id="7_qsp4k"]
 [ext_resource type="Shader" uid="uid://rtiy8ypxrg7r" path="res://main.gdshader" id="8_5vw27"]
+[ext_resource type="Resource" uid="uid://8815yfubvuca" path="res://resources/ladron2.tres" id="8_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://bf0cap60iglcj" path="res://espirites/pistola.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://ct178jjqnc1mb" path="res://espirites/basura.png" id="8_kek77"]
 [ext_resource type="Texture2D" uid="uid://d3qlvti417eeh" path="res://espirites/bocaAbierta.png" id="9_82xsv"]
@@ -163,8 +164,8 @@ background = NodePath("background")
 sonidoBasura = NodePath("sonidoBasura")
 sonidoGrab = NodePath("sonidoGrab")
 mascarMiniGame = NodePath("Mascar")
-personajes = Array[ExtResource("2_vivmo")]([ExtResource("3_vivmo"), ExtResource("5_0rl1p"), ExtResource("4_2cqfq"), ExtResource("5_cegan"), ExtResource("6_xuqvo"), ExtResource("7_kq58d")])
-nodosPersonaje = [NodePath("vieja"), NodePath("paloma"), NodePath("ladron"), NodePath("amego"), NodePath("espiritista"), NodePath("fantasma")]
+personajes = Array[ExtResource("2_vivmo")]([ExtResource("3_vivmo"), ExtResource("5_0rl1p"), ExtResource("4_2cqfq"), ExtResource("5_cegan"), ExtResource("6_xuqvo"), ExtResource("8_b1qrp"), ExtResource("7_kq58d")])
+nodosPersonaje = [NodePath("vieja"), NodePath("paloma"), NodePath("ladron"), NodePath("amego"), NodePath("espiritista"), NodePath("ladron2"), NodePath("fantasma")]
 
 [node name="sonidoMascar" type="AudioStreamPlayer2D" parent="." unique_id=1214895014]
 stream = ExtResource("7_qsp4k")
@@ -328,6 +329,35 @@ shape = SubResource("RectangleShape2D_5vw27")
 libraries/ = SubResource("AnimationLibrary_4c57u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ladron" unique_id=104711846]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+
+[node name="ladron2" type="Sprite2D" parent="." unique_id=1631399637 node_paths=PackedStringArray("pistolaAgarrar")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(512, 384)
+texture = ExtResource("5_4c57u")
+script = ExtResource("15_d13ii")
+pistolaAgarrar = NodePath("spriteObjeto")
+
+[node name="spriteObjeto" type="Sprite2D" parent="ladron2" unique_id=2117195067 node_paths=PackedStringArray("boca", "basura")]
+position = Vector2(30, 57)
+rotation = 3.1028526
+texture = SubResource("AtlasTexture_82xsv")
+flip_h = true
+script = ExtResource("6_272bh")
+boca = NodePath("../../Mascar/pos_boca")
+basura = NodePath("../../basura/pos_basura")
+
+[node name="Area2D" type="Area2D" parent="ladron2/spriteObjeto" unique_id=1829937179]
+position = Vector2(-1, -82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladron2/spriteObjeto/Area2D" unique_id=1895804625]
+position = Vector2(8.176758, 81.34085)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ladron2/spriteObjeto" unique_id=1562063677]
+libraries/ = SubResource("AnimationLibrary_4c57u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ladron2" unique_id=1716247742]
 libraries/ = SubResource("AnimationLibrary_5vw27")
 
 [node name="espiritista" type="Sprite2D" parent="." unique_id=1901949604 node_paths=PackedStringArray("pistolaAgarrar")]
@@ -505,5 +535,6 @@ mouse_filter = 2
 [connection signal="input_event" from="vieja/spriteObjeto/Area2D" to="vieja/spriteObjeto" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="ladron/spriteObjeto/Area2D" to="ladron/spriteObjeto" method="_on_area_2d_input_event"]
 [connection signal="animation_finished" from="ladron/AnimationPlayer" to="." method="_on_dealer_animation_finished"]
+[connection signal="input_event" from="ladron2/spriteObjeto/Area2D" to="ladron2/spriteObjeto" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="espiritista/spriteObjeto/Area2D" to="espiritista/spriteObjeto" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="amego/spriteObjeto/Area2D" to="amego/spriteObjeto" method="_on_area_2d_input_event"]
