@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://ex62unddf3"]
+
+[ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_8x7yi"]
+[ext_resource type="AudioStream" uid="uid://cuspuhva1a0uc" path="res://musica/metal-pipe-aurilla cortada.mp3" id="2_rg0tk"]
+[ext_resource type="Texture2D" uid="uid://un8wrtkvh3ba" path="res://espirites/bocaIzquierda.png" id="2_u2w00"]
+[ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="3_u2w00"]
+[ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="4_rg0tk"]
+[ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="4_u3aqo"]
+[ext_resource type="AudioStream" uid="uid://c63ujwi3e4bl6" path="res://musica/masticar paloma robot metalica.mp3" id="5_n5pv1"]
+[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="5_u3aqo"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="7_ydbi2"]
+
+[sub_resource type="Resource" id="Resource_n5pv1"]
+script = ExtResource("1_8x7yi")
+sprite1 = ExtResource("2_u2w00")
+sprite2 = ExtResource("3_u2w00")
+sonido = ExtResource("2_rg0tk")
+metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
+
+[sub_resource type="Resource" id="Resource_ydbi2"]
+script = ExtResource("1_8x7yi")
+sprite1 = ExtResource("4_u3aqo")
+sprite2 = ExtResource("4_u3aqo")
+sonido = ExtResource("5_n5pv1")
+metadata/_custom_type_script = "uid://cddsmqd1gs3c3"
+
+[sub_resource type="Resource" id="Resource_d5va3"]
+script = ExtResource("1_8x7yi")
+sprite1 = ExtResource("3_u2w00")
+sprite2 = ExtResource("4_rg0tk")
+sonido = ExtResource("5_n5pv1")
+
+[sub_resource type="Resource" id="Resource_v1qok"]
+script = ExtResource("5_u3aqo")
+_pasos = Array[ExtResource("1_8x7yi")]([SubResource("Resource_n5pv1"), SubResource("Resource_ydbi2"), SubResource("Resource_d5va3")])
+
+[resource]
+script = ExtResource("7_ydbi2")
+textoIntro = Array[String](["Escucha, no tengo mucho tiempo", "Ellos saben que he despertado, dale una vuelta", "Esa paloma de ahí... es un dron biológico", "Te pagaré el doble, pero tienes que deshacerte de ella, antes de que… vengan mas"])
+textoPostMascar = Array[String](["No sabes de la que me has salvado", "tengo un bunker", "tiene las puertas abiertas para ti, lo necesitarás pronto"])
+textoPostThrash = Array[String](["¡Para! ¡Así sabrán donde estamos!", "Tengo que huir de aquí ahora"])
+mascarData = SubResource("Resource_v1qok")
