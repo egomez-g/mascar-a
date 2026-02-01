@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Personaje" format=3 uid="uid://j2y3g51ytud1"]
 
-[ext_resource type="Script" uid="uid://dffytth1pn8o1" path="res://scripts/Personaje.gd" id="1_0r5nj"]
-[ext_resource type="Script" uid="uid://dbqo1dihbwww2" path="res://scripts/Pasos/PasoMascar.gd" id="1_pk161"]
+[ext_resource type="Script" uid="uid://dq3480abplux1" path="res://scripts/Personaje.gd" id="1_0r5nj"]
+[ext_resource type="Script" uid="uid://cddsmqd1gs3c3" path="res://scripts/Pasos/PasoMascar.gd" id="1_pk161"]
 [ext_resource type="Texture2D" uid="uid://bjv5fm17p56ds" path="res://espirites/bocaDerecha.png" id="2_v515b"]
 [ext_resource type="Texture2D" uid="uid://bja8r5pwyixtp" path="res://espirites/bocaEstandar.png" id="3_mgf51"]
 [ext_resource type="Texture2D" uid="uid://un8wrtkvh3ba" path="res://espirites/bocaIzquierda.png" id="4_u17xr"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d35gr7ljyohqw" path="res://espirites/bocaCerradaDer.png" id="5_wjaur"]
 [ext_resource type="Texture2D" uid="uid://c2b1rjqg58j0n" path="res://espirites/bocaCerradaIzq.png" id="6_txxq7"]
 [ext_resource type="Texture2D" uid="uid://bjr0fnvvvrvd5" path="res://espirites/bocaCerrada.png" id="7_tjp6i"]
-[ext_resource type="Script" uid="uid://c7afjj4lv2pqf" path="res://scripts/Pasos/Pasos.gd" id="8_5t5fx"]
+[ext_resource type="Script" uid="uid://h2jpn25g2dru" path="res://scripts/Pasos/Pasos.gd" id="8_5t5fx"]
 [ext_resource type="AudioStream" uid="uid://ck53tvk1qph24" path="res://musica/deglutir.mp3" id="8_txxq7"]
 [ext_resource type="Texture2D" uid="uid://5upv4chmrvsg" path="res://espirites/ladronTriste.png" id="9_v515b"]
 
