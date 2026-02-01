@@ -47,6 +47,7 @@ func  get_current_personaje_node() -> Sprite2D:
 	return nodosPersonaje[personajes_i]
 
 func _ready():
+	blackScreenOverlay.visible = true
 	estado = Estados.INTRO
 	zonaTexto.text = ""
 	for nodoPersonaje in nodosPersonaje:

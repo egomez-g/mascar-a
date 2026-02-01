@@ -136,10 +136,10 @@ shader_parameter/blur_samples = 15
 [node name="main" type="Node2D" unique_id=2143314829 node_paths=PackedStringArray("blackScreenOverlay", "MascarTitulo", "MascarTituloA", "TextoIntro", "sonidoPasarTexto", "sonidoMordisco", "background", "mascarMiniGame", "nodosPersonaje")]
 script = ExtResource("1_lquwl")
 introTexts = Array[String](["Buenas tardes", "Que lo que mucha suerte"])
-blackScreenOverlay = NodePath("Control")
-MascarTitulo = NodePath("Control/ColorRect/Control/Label")
-MascarTituloA = NodePath("Control/ColorRect/Control/Label2")
-TextoIntro = NodePath("Control/ColorRect/Label")
+blackScreenOverlay = NodePath("BlackScreen")
+MascarTitulo = NodePath("BlackScreen/ColorRect/Control/Label")
+MascarTituloA = NodePath("BlackScreen/ColorRect/Control/Label2")
+TextoIntro = NodePath("BlackScreen/ColorRect/Label")
 sonidoPasarTexto = NodePath("pasarTexto")
 sonidoMordisco = NodePath("sonidoMascar")
 background = NodePath("background")
@@ -326,7 +326,7 @@ vertical_alignment = 1
 [node name="cursor" type="Node2D" parent="." unique_id=1097974968]
 script = ExtResource("19_82xsv")
 
-[node name="Control" type="Control" parent="." unique_id=1424133471]
+[node name="BlackScreen" type="Control" parent="." unique_id=1424133471]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -735.0
@@ -334,7 +334,7 @@ offset_top = -502.0
 offset_right = 1744.0
 offset_bottom = 1284.0
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=870646671]
+[node name="ColorRect" type="ColorRect" parent="BlackScreen" unique_id=870646671]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -343,7 +343,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.09803922, 0.05882353, 0.06666667, 1)
 
-[node name="Label" type="Label" parent="Control/ColorRect" unique_id=697481013]
+[node name="Label" type="Label" parent="BlackScreen/ColorRect" unique_id=697481013]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -357,7 +357,7 @@ text = "BUENAS TARDES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="Control/ColorRect" unique_id=1209547977]
+[node name="Control" type="Control" parent="BlackScreen/ColorRect" unique_id=1209547977]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -365,7 +365,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control/ColorRect/Control" unique_id=1876765667]
+[node name="Label" type="Label" parent="BlackScreen/ColorRect/Control" unique_id=1876765667]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -378,7 +378,7 @@ text = "MASCAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ColorRect/Control" unique_id=1251255850]
+[node name="Label2" type="Label" parent="BlackScreen/ColorRect/Control" unique_id=1251255850]
 modulate = Color(0.6582415, 9.963065e-06, 0.15268129, 1)
 layout_mode = 1
 anchors_preset = 15
