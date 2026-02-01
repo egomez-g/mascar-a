@@ -26,12 +26,12 @@ var mascado : bool
 var currentGrab : objeto_sprite
 
 @export var personajes : Array[Personaje]
-@export var nodosPersonaje : Array[Node2D]
+@export var nodosPersonaje : Array[Sprite2D]
 
 func  get_current_personaje_data() -> Personaje:
 	return personajes[personajes_i]
 
-func  get_current_personaje_node() -> Node2D:
+func  get_current_personaje_node() -> Sprite2D:
 	return nodosPersonaje[personajes_i]
 
 func _ready():
@@ -93,6 +93,8 @@ func OnStartGrab():
 
 func OnMascarEnded():
 	mascarMiniGame.StepsEnded.disconnect(OnMascarEnded)
+	if get_current_personaje_data().mascarData.onMascarEnd:
+		get_current_personaje_node().texture = get_current_personaje_data().mascarData.onMascarEnd
 	estado = Estados.HABLANDOPOST
 	mascado = true
 	text_i = 0
